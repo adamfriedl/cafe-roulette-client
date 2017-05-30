@@ -22,7 +22,7 @@ class App extends Component {
         </div>
         <p className="App-intro">
           Hey Sexy, let's grab a coffee from around the way.
-          
+
         </p>
       </div>
     );
@@ -40,5 +40,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default App
-// = connect(mapStateToProps, mapDispatchToProps)(App)
+export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App)
