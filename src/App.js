@@ -4,6 +4,7 @@ import CoffeeShop from './CoffeeShop';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from './actions/coffeeShopActions'
+import AppBar from 'material-ui/AppBar'
 
 
 class App extends Component {
@@ -14,15 +15,16 @@ class App extends Component {
     this.props.actions.fetchCoffeeShops()
   }
 
+
   render() {
 
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
+        <AppBar
+          title="Where's for Coffee?"
+          iconClassNameRight="muidocs-icon-navigation-expand-more"
+        />
+        <p>
           Hey Sexy, let's grab a coffee from around the way.
         </p>
         <CoffeeShop shops={this.props.coffeeShops}/>
