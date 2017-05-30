@@ -11,12 +11,11 @@ class App extends Component {
 
   componentDidMount() {
     console.log('inside of componentDidMount')
-    console.log(this.props)
     this.props.actions.fetchCoffeeShops()
-    // {debugger}
   }
 
   render() {
+
     return (
       <div className="App">
         <div className="App-header">
@@ -25,8 +24,8 @@ class App extends Component {
         </div>
         <p className="App-intro">
           Hey Sexy, let's grab a coffee from around the way.
-
         </p>
+        <CoffeeShop shops={this.props.coffeeShops}/>
       </div>
     );
   }

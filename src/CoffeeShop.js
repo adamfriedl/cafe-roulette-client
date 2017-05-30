@@ -2,9 +2,19 @@ import React from 'react'
 
 const CoffeeShop = (props) => {
 
+  function firstTitle() {
+    return props.shops.map((shop, index) => (
+      <li key={index}>
+        {shop.title}
+      </li>
+    ))
+  }
+
   return (
     <div>
-      {props[0]['title']}
+      <ul>
+        {firstTitle()}
+      </ul>
     </div>
   )
 }
