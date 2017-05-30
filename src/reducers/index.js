@@ -2,6 +2,8 @@ import { combineReducers } from 'redux'
 // import { routerReducer } from 'react-router-redux'
 import coffeeShopsReducer from './coffeeShopsReducer'
 
-export default combineReducers({
-  coffeeShops: coffeeShopsReducer
+const rootReducer = combineReducers({
+  shops: coffeeShopsReducer
 })
+
+export default rootReducer

@@ -13,7 +13,9 @@ class App extends Component {
     console.log('inside of componentDidMount')
     console.log(this.props)
     this.props.actions.fetchCoffeeShops()
+    // {debugger}
   }
+
   render() {
     return (
       <div className="App">
@@ -32,7 +34,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   console.log('inside mapStateToProps')
-  return {coffeeShops: state.coffeeShops}
+  return {coffeeShops: state.shops}
 }
 
 const mapDispatchToProps = dispatch => {
