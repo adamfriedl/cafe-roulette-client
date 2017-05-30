@@ -7,12 +7,13 @@ import * as actions from './actions/coffeeShopActions'
 
 
 class App extends Component {
-  //
-  // componentDidMount() {
-  //   console.log('inside of componentDidMount')
-  //   this.props.actions.fetchCoffeeShops()
-  // }
 
+
+  componentDidMount() {
+    console.log('inside of componentDidMount')
+    console.log(this.props)
+    this.props.actions.fetchCoffeeShops()
+  }
   render() {
     return (
       <div className="App">
