@@ -2,10 +2,10 @@ import React from 'react'
 
 const CoffeeShop = (props) => {
 
-  function firstTitle() {
+  function randomShop() {
     return props.shops.map((shop, index) => (
       <li key={index}>
-        {shop.title}
+        {shop.name}
       </li>
     ))
   }
@@ -13,7 +13,7 @@ const CoffeeShop = (props) => {
   return (
     <div>
       <ul>
-        {firstTitle()}
+        {randomShop()}
       </ul>
     </div>
   )
