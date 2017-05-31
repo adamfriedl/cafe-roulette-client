@@ -3,33 +3,28 @@ import CoffeeShop from './CoffeeShop';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from './actions/coffeeShopActions'
-import AppBar from 'material-ui/AppBar'
-import IconButton from 'material-ui/IconButton'
-import NavigationClose from 'material-ui/svg-icons/navigation/close'
-import CoffeeCupIcon from './assets/CoffeeCupIcon'
+import CoffeeAppBar from './presentation/CoffeeAppBar'
+import Recommendation from './Recommendation'
+
 
 
 class App extends Component {
-
 
   componentDidMount() {
     console.log('inside of componentDidMount')
     this.props.actions.fetchCoffeeShops()
   }
 
-
   render() {
 
     return (
       <div className="App">
-        <AppBar
-          title="Where's for Coffee?"
-          iconElementLeft={<IconButton><NavigationClose /></IconButton>}
-        />
+        <CoffeeAppBar />
         <p>
           Hey Sexy, let's grab a coffee from around the way.
+          <CoffeeShop shops={this.props.coffeeShops}/>
+          <Recommendation shops={this.props.coffeeShops} />
         </p>
-        <CoffeeShop shops={this.props.coffeeShops}/>
       </div>
     );
   }
