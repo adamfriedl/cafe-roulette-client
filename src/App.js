@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CoffeeShop from './CoffeeShop';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from './actions/coffeeShopActions'
@@ -20,11 +19,7 @@ class App extends Component {
     return (
       <div className="App">
         <CoffeeAppBar />
-        <p>
-          Hey Sexy, let's grab a coffee from around the way.
-          <CoffeeShop shops={this.props.coffeeShops}/>
-          <Recommendation shops={this.props.coffeeShops} />
-        </p>
+        <Recommendation shops={this.props.coffeeShops} />
       </div>
     );
   }
