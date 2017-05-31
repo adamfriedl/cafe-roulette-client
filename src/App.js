@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import CoffeeShop from './CoffeeShop';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from './actions/coffeeShopActions'
 import AppBar from 'material-ui/AppBar'
-import CoffeeAppBar from './CoffeeAppBar'
+import IconButton from 'material-ui/IconButton'
+import NavigationClose from 'material-ui/svg-icons/navigation/close'
+import CoffeeCupIcon from './assets/CoffeeCupIcon'
 
 
 class App extends Component {
@@ -22,7 +23,9 @@ class App extends Component {
     return (
       <div className="App">
         <AppBar
-          title="Where's for Coffee?" />
+          title="Where's for Coffee?"
+          iconElementLeft={<IconButton><NavigationClose /></IconButton>}
+        />
         <p>
           Hey Sexy, let's grab a coffee from around the way.
         </p>

@@ -1,7 +1,5 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar'
-import coffeeToGo from './coffee-to-go.svg'
-
 
 /**
  * A simple example of `AppBar` with an icon on the right.
@@ -10,7 +8,6 @@ import coffeeToGo from './coffee-to-go.svg'
 const CoffeeAppBar = () => (
   <AppBar
     title="Title"
-    iconElementLeft={coffeeToGo}
   />
 );
 
