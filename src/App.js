@@ -6,7 +6,6 @@ import CoffeeAppBar from './presentation/CoffeeAppBar'
 import Recommendation from './Recommendation'
 
 
-
 class App extends Component {
 
   componentDidMount() {
@@ -19,7 +18,7 @@ class App extends Component {
     return (
       <div className="App">
         <CoffeeAppBar />
-        <Recommendation shop={this.props.shop} />
+        <Recommendation shops={this.props.shops} />
       </div>
     );
   }
@@ -27,7 +26,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   console.log('inside mapStateToProps')
-  return {shop: state.shop}
+  return {shops: state.shops}
 }
 
 const mapDispatchToProps = dispatch => {
