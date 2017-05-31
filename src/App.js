@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from './actions/coffeeShopActions'
 import AppBar from 'material-ui/AppBar'
+import CoffeeAppBar from './CoffeeAppBar'
 
 
 class App extends Component {
@@ -21,9 +22,7 @@ class App extends Component {
     return (
       <div className="App">
         <AppBar
-          title="Where's for Coffee?"
-          iconClassNameRight="muidocs-icon-navigation-expand-more"
-        />
+          title="Where's for Coffee?" />
         <p>
           Hey Sexy, let's grab a coffee from around the way.
         </p>

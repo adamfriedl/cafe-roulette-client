@@ -6,7 +6,7 @@ import thunk from 'redux-thunk'
 import rootReducer from './reducers'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {WrapperApp} from './App';
-// import './App.css'
+
 
 const store = createStore(
   rootReducer,
@@ -17,7 +17,7 @@ const store = createStore(
 )
 
 const App = () => (
-  <MuiThemeProvider>
+  <MuiThemeProvider >
     <WrapperApp />
   </MuiThemeProvider>
 )
