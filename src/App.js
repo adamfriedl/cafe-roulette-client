@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <div className="App">
         <CoffeeAppBar />
-        <Recommendation shops={this.props.coffeeShops} />
+        <Recommendation shop={this.props.shop} />
       </div>
     );
   }
@@ -27,7 +27,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   console.log('inside mapStateToProps')
-  return {coffeeShops: state.shops}
+  return {shop: state.shop}
 }
 
 const mapDispatchToProps = dispatch => {

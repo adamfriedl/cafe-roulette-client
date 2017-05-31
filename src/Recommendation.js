@@ -14,7 +14,7 @@ const Recommendation = (props) => {
 
   return(
   <p>
-    Well, thats just great, Susan. You definitely owe me a no-whip skinny latte after this. Let's do {coffeeShop().description}
+    Well, thats just great, Susan. You definitely owe me a no-whip skinny latte after this. Let's do {props.shop.name}
   </p>
   )
 }
