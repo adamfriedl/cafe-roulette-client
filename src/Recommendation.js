@@ -8,14 +8,18 @@ const Recommendation = (props) => {
   let shop = Object.assign({}, props.shops[Math.floor(Math.random()*props.shops.length)])
 
   let pStyle = {
-    fontSize:40
+    fontSize:40,
+    lineHeight: 1.3,
+    fontStyle:'italic',
+    fontWeight:'bold',
+    textTransform:'uppercase',
   }
 
 
   return (
     <div>
       <p style={pStyle}>
-        Goodnight kittens and goodnight mittens. Goodnight clocks and goodnight {shop.name}
+        Goodnight kittens and goodnight mittens. Goodnight clocks and goodnight <a href='http://cafegrumpy.com'>{shop.name}</a>
       </p>
     </div>
   )
