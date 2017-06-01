@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk'
-import rootReducer from './reducers'
+import coffeeShopsReducer from './reducers/coffeeShopsReducer'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {brown500, brown700} from 'material-ui/styles/colors';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -11,7 +11,7 @@ import {WrapperApp} from './App';
 
 
 const store = createStore(
-  rootReducer,
+  coffeeShopsReducer,
   compose(
     applyMiddleware(thunk),
     window.devToolsExtension ? window.devToolsExtension() : f => f

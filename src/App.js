@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import PropTypes from 'prop-types'
 import * as actions from './actions/coffeeShopActions'
 import CoffeeAppBar from './presentation/CoffeeAppBar'
 import Recommendation from './Recommendation'
 
 
 class App extends Component {
+
+  propTypes = {
+    loading: PropTypes.bool
+  }
 
   componentDidMount() {
     console.log('inside of componentDidMount')
@@ -18,7 +23,10 @@ class App extends Component {
     return (
       <div className="App">
         <CoffeeAppBar />
-        <Recommendation shops={this.props.shops} />
+        {this.props.loading
+          ? <h2>Loading...</h2>
+          : <Recommendation shops={this.props.shops} />
+        }
       </div>
     );
   }
@@ -26,7 +34,10 @@ class App extends Component {
 
 const mapStateToProps = state => {
   console.log('inside mapStateToProps')
-  return {shops: state.shops}
+  return {
+    loading: state.loading,
+    shops: state.shops
+  }
 }
 
 const mapDispatchToProps = dispatch => {
