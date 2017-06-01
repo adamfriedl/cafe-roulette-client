@@ -7,10 +7,16 @@ const Recommendation = (props) => {
 
   let shop = Object.assign({}, props.shops[Math.floor(Math.random()*props.shops.length)])
 
+  let pStyle = {
+    fontSize:40
+  }
+
 
   return (
     <div>
-      {shop.name}
+      <p style={pStyle}>
+        Goodnight kittens and goodnight mittens. Goodnight clocks and goodnight {shop.name}
+      </p>
     </div>
   )
 }
