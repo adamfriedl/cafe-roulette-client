@@ -8,7 +8,13 @@ const CoffeeAppBar = () => (
   <AppBar
     title="Where's for Coffee?"
     iconElementLeft={<IconButton><CoffeeCupIcon /></IconButton>}
+    iconElementRight={<CoffeeCupIcon />}
   />
 )
 
 export default CoffeeAppBar
+
+
+
+// iconElementLeft={<IconButton><CoffeeCupIcon /></IconButton>}
+// iconElementRight={<CoffeeCupIcon />}
