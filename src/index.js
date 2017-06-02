@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Route, IndexRoute, Link, browserHistory, BrowserRouter as Router} from 'react-router-dom';
+import {Route, IndexRoute, Link, Switch, BrowserRouter as Router} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk'
@@ -9,6 +9,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {brown500, brown700} from 'material-ui/styles/colors';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {WrapperApp} from './App';
+import CoffeeShopsForm from './containers/CoffeeShopsForm'
+import CoffeeShopsIndex from './components/CoffeeShopsIndex'
 
 
 const store = createStore(
@@ -36,7 +38,11 @@ const App = () => (
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <Route path='/' component={App} />
+      <Switch>
+        <Route exact path='/' component={App} />
+        <Route path='/coffeeshops/new' component={CoffeeShopsForm} />
+        <Route path='/coffeeshops' component={CoffeeShopsIndex} />
+      </Switch>
     </Router>
   </Provider>,
   document.getElementById('root')
