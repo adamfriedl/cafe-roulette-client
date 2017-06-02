@@ -3,8 +3,8 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types'
 import * as actions from './actions/coffeeShopActions'
-import CoffeeAppBar from './presentation/CoffeeAppBar'
-import Recommendation from './Recommendation'
+import CoffeeAppBar from './components/CoffeeAppBar'
+import Recommendation from './components/Recommendation'
 
 
 class App extends Component {

@@ -1,8 +1,5 @@
 import React from 'react';
-// import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 import SvgIcon from 'material-ui/SvgIcon';
-// import coffeeToGo from './coffeeToGo.svg'
-
 
 const CoffeeCupIcon = () => (
   <svg width="34" y="34"
