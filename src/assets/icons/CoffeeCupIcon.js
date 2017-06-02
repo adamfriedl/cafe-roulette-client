@@ -1,5 +1,4 @@
 import React from 'react';
-import SvgIcon from 'material-ui/SvgIcon';
 
 const CoffeeCupIcon = () => (
   <svg width="34" y="34"

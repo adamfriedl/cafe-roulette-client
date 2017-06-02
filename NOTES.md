@@ -28,3 +28,20 @@ const tops =
     }
   ]
 }
+
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Router>
+      <App>
+        <Switch>
+          <Route exact path='/' component={Recommendation} />
+          <Route path='/coffeeshops/new' component={CoffeeShopsForm} />
+          <Route path='/coffeeshops' component={CoffeeShopsIndex} />
+        </Switch>
+      </App>
+    </Router>
+  </Provider>,
+  document.getElementById('root')
+
+  <Route exact path='/' component={Recommendation} />

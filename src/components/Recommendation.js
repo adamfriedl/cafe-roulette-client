@@ -5,7 +5,7 @@ const Recommendation = (props) => {
 
   // let shop = props.shops.map(shop => shop.name)
   // uses shop with brackets around in the return function
-
+  debugger
   let shop = Object.assign({}, props.shops[Math.floor(Math.random()*props.shops.length)])
 
   let pStyle = {
@@ -15,7 +15,6 @@ const Recommendation = (props) => {
     fontWeight:'bold',
     textTransform:'uppercase',
   }
-
 
   return (
     <div>
@@ -37,10 +36,8 @@ const Recommendation = (props) => {
         <strong>Estimated pain relative to my nonprofit salary?</strong><br />
         {shop.price_range}
       </p>
-
-
-
     </div>
   )
 }
+
 export default Recommendation

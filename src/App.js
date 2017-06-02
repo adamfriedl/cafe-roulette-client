@@ -4,8 +4,11 @@ import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types'
 import * as actions from './actions/coffeeShopActions'
 import CoffeeAppBar from './components/CoffeeAppBar'
+import {Route, Link, Switch, BrowserRouter as Router} from 'react-router-dom';
 import Recommendation from './components/Recommendation'
-
+import CoffeeShopsForm from './containers/CoffeeShopsForm'
+import CoffeeShopsIndex from './components/CoffeeShopsIndex'
+import PorousRoute from './components/PorousRoute'
 
 class App extends Component {
 
@@ -25,7 +28,13 @@ class App extends Component {
         <CoffeeAppBar />
         {this.props.loading
           ? <h2>Loading...</h2>
-          : <Recommendation shops={this.props.shops} />
+          : <Router >
+              <PorousRoute>
+                <Route exact path='/' component={Recommendation} shops={this.props.shops}/>
+                <Route path='/coffeeshops/new' component={CoffeeShopsForm} />
+                <Route path='/coffeeshops' component={CoffeeShopsIndex} />
+              </PorousRoute>
+            </Router>
         }
       </div>
     );
