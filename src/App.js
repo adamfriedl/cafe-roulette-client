@@ -29,11 +29,11 @@ class App extends Component {
         {this.props.loading
           ? <h2>Loading...</h2>
           : <Router >
-              <PorousRoute>
-                <Route exact path='/' component={Recommendation} shops={this.props.shops}/>
+              <Switch>
+                <Route exact path='/' render={props => <Recommendation shops={this.props.shops} {...props} />} />
                 <Route path='/coffeeshops/new' component={CoffeeShopsForm} />
                 <Route path='/coffeeshops' component={CoffeeShopsIndex} />
-              </PorousRoute>
+              </Switch>
             </Router>
         }
       </div>

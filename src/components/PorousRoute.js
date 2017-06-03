@@ -1,10 +1,8 @@
 import React from 'react';
-import Route from 'react-router';
+import { Route } from 'react-router-dom';
 
-function ({ children, ...props }) {
+export default function ({ children, ...props }) {
   return (
     <Route path={props.path}>{React.cloneElement(children, props)}</Route>
   );
 }
-
-export default PorousRoute
