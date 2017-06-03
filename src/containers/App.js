@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types'
-import * as actions from './actions/coffeeShopActions'
-import CoffeeAppBar from './components/CoffeeAppBar'
+import * as actions from '../actions/coffeeShopActions'
+import CoffeeAppBar from '../components/CoffeeAppBar'
 import {Route, Link, Switch, BrowserRouter as Router} from 'react-router-dom';
-import Recommendation from './components/Recommendation'
-import CoffeeShopsForm from './containers/CoffeeShopsForm'
-import CoffeeShopsIndex from './components/CoffeeShopsIndex'
-import PorousRoute from './components/PorousRoute'
+import Recommendation from '../components/Recommendation'
+import CoffeeShopsForm from './CoffeeShopsForm'
+import CoffeeShopsIndex from '../components/CoffeeShopsIndex'
 
 class App extends Component {
 
