@@ -1,4 +1,4 @@
-export default function coffeeShopsReducer(state = {loading: false, shops: []}, action) {
+const coffeeShopsReducer = (state = {loading: false, shops: []}, action) => {
   switch (action.type) {
 
     case 'LOADING_COFFEE_SHOPS':
@@ -11,3 +11,5 @@ export default function coffeeShopsReducer(state = {loading: false, shops: []}, 
       return state
   }
 }
+
+export default coffeeShopsReducer

@@ -6,7 +6,7 @@ import * as actions from '../actions/coffeeShopActions'
 import CoffeeAppBar from '../components/CoffeeAppBar'
 import {Route, Link, Switch, BrowserRouter as Router} from 'react-router-dom';
 import Recommendation from '../components/Recommendation'
-import CoffeeShopsForm from './CoffeeShopsForm'
+import {WrappedCoffeeShopsForm} from './CoffeeShopsForm'
 import CoffeeShopsIndex from '../components/CoffeeShopsIndex'
 
 class App extends Component {
@@ -30,7 +30,7 @@ class App extends Component {
           : <Router >
               <Switch>
                 <Route exact path='/' render={props => <Recommendation shops={this.props.shops} {...props} />} />
-                <Route path='/coffeeshops/new' component={CoffeeShopsForm} />
+                <Route path='/coffeeshops/new' component={WrappedCoffeeShopsForm} />
                 <Route path='/coffeeshops' component={CoffeeShopsIndex} />
               </Switch>
             </Router>
