@@ -1,4 +1,8 @@
-
+# To Do
+- Finish form
+- Create index page
+- Google Maps API
+- Style
 
 
 

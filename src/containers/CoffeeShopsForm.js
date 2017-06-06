@@ -13,20 +13,15 @@ class CoffeeShopsForm extends Component {
     }
   }
 
-  getInitialState() {
-     return {
-       name: ''
-     }
-   }
-
-  handleChange(event) {
+  handleNameChange(event) {
     this.setState({
-      text: event.target.value
+      name: event.target.value
     });
   };
 
   handleSubmit(event) {
     event.preventDefault()
+    // console.log(this.state)
     this.props.actions.addCoffeeShop(this.state)
   }
 
@@ -36,11 +31,10 @@ class CoffeeShopsForm extends Component {
         <form onSubmit={event => this.handleSubmit(event)} >
           <p>
             <label>Name</label>
-            <input type="text" onChange={event => this.handleChange(event)} placeholder='Bean There, Drank That' />
+            <input type="text" id='name' onChange={event => this.handleNameChange(event)} placeholder='Bean There, Drank That' />
           </p>
           <input type="submit" />
         </form>
-        {this.state.name}
       </div>
     );
   }
@@ -51,4 +45,4 @@ const mapDispatchToProps = dispatch => {
   return {actions: bindActionCreators(actions, dispatch)}
 }
 
-export const WrappedCoffeeShopsForm = connect(null, mapDispatchToProps)(CoffeeShopsForm);
+export default CoffeeShopsForm = connect(null, mapDispatchToProps)(CoffeeShopsForm);

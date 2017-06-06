@@ -7,6 +7,9 @@ const coffeeShopsReducer = (state = {loading: false, shops: []}, action) => {
     case 'FETCH_COFFEE_SHOPS':
       return {loading: false, shops: action.payload}
 
+    case 'ADD_COFFEE_SHOP':
+      return {loading: false, shops: [...state.shops, action.payload]}
+
     default:
       return state
   }

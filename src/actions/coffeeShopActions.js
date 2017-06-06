@@ -1,5 +1,4 @@
 import fetch from 'isomorphic-fetch'
-import thunk from 'redux-thunk'
 
 export function fetchCoffeeShops() {
 
@@ -13,9 +12,8 @@ export function fetchCoffeeShops() {
 
 export function addCoffeeShop(data) {
 
-  // return function(dispatch) {
-  //   dispatch({type: 'ADD_COFFEE_SHOP'})
-    return fetch('http://localhost:9000/coffee_shops/', {
+  return function(dispatch) {
+    return fetch('http://localhost:9000/coffee_shops', {
       method: 'POST',
       mode: 'CORS',
       headers: {
@@ -23,6 +21,8 @@ export function addCoffeeShop(data) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data)
-    }).then(res => res).catch(err => err)
-  // }
+    }).then(body => dispatch({type: 'ADD_COFFEE_SHOP', payload: body}))
+
+     // WHAT TO DO HERE? CONFUSED AS HOW TO POST
+  }
 }
