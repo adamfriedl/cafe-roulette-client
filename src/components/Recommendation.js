@@ -19,7 +19,7 @@ const Recommendation = (props) => {
   return (
     <div>
       <p style={pStyle}>
-        Goodnight kittens and goodnight mittens. Goodnight clocks and goodnight <a href='http://cafegrumpy.com'>{shop.name}</a>
+        Goodnight kittens and goodnight mittens. Goodnight clocks and goodnight <a href='{shop.website}'>{shop.name}</a>
       </p>
       <p>
         <strong>Fun Fact</strong><br />
@@ -28,7 +28,7 @@ const Recommendation = (props) => {
       <p>
         <strong>Tasty Food Things?</strong><br />
         {shop.food
-          ? <em>Yum!</em>
+          ? <em>Thumbs up!</em>
           : <em>NotYum!</em>
         }
       </p>

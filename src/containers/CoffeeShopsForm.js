@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/coffeeShopActions';
-import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
 import { ValidatorForm, TextValidator, SelectValidator} from 'react-material-ui-form-validator';
 import SelectField from 'material-ui/SelectField';
 import DropDownMenu from 'material-ui/DropDownMenu';
@@ -127,16 +127,16 @@ class CoffeeShopsForm extends Component {
             <MenuItem value={3} primaryText="$$$ - Splurge, baby!" />
 
           </SelectField>
-          <br />
-
-
-
-
 
           <br />
           <br />
 
-          <RaisedButton type="submit" >Submit</RaisedButton>
+          <FlatButton
+            type="submit"
+            secondary={true}
+          >
+            Submit
+          </FlatButton>
         </form>
       </div>
     );
