@@ -47,14 +47,14 @@ class CoffeeShopsForm extends Component {
     });
   };
   handleFoodChange(e, index, value) {
-    console.log('event is firing')
+    console.log('Selected ' + value)
     this.setState({
-      food: e.target.value
+      food: value
     });
   };
-  handlePriceRangeChange(e) {
+  handlePriceRangeChange(e, index, value) {
     this.setState({
-      price_range: e.target.value
+      price_range: value
     });
   };
 
@@ -71,13 +71,15 @@ class CoffeeShopsForm extends Component {
 
           <TextField
             hintText="Central Perk"
+            value={this.state.name}
             floatingLabelText="Name"
             onChange={e => this.handleNameChange(e)}
           />
           <br />
 
           <TextField
-            hintText="Hipster customer service but delicious cold brew. "
+            hintText="Hipster customer service but delicious cold brew."
+            value={this.state.description}
             floatingLabelText="Description"
             onChange={e => this.handleDescriptionChange(e)}
             multiLine={true}
@@ -88,6 +90,7 @@ class CoffeeShopsForm extends Component {
 
           <TextField
             hintText="thejollygoat.com"
+            value={this.state.website}
             floatingLabelText="Website"
             onChange={e => this.handleWebsiteChange(e)}
           />
@@ -95,6 +98,7 @@ class CoffeeShopsForm extends Component {
 
           <TextField
             hintText="520 West 8th Avenue, New York, NY 10018"
+            value={this.state.address}
             floatingLabelText="Address"
             onChange={e => this.handleAddressChange(e)}
             multiLine={true}
@@ -108,11 +112,24 @@ class CoffeeShopsForm extends Component {
             value={this.state.food}
             onChange={(e, index, value) => this.handleFoodChange(e, index, value)}
           >
-            <MenuItem value={null} primaryText="" />
             <MenuItem value={true} primaryText="Yes" />
             <MenuItem value={false} primaryText="No" />
           </SelectField>
           <br />
+
+          <SelectField
+            floatingLabelText="Sad Nonprofit Wallet Pain"
+            value={this.state.price_range}
+            onChange={(e, index, value) => this.handlePriceRangeChange(e, index, value)}
+          >
+            <MenuItem value={1} primaryText="$ - They're giving it away." />
+            <MenuItem value={2} primaryText="$$ - Hurts so tasty." />
+            <MenuItem value={3} primaryText="$$$ - Splurge, baby!" />
+
+          </SelectField>
+          <br />
+
+
 
 
 
