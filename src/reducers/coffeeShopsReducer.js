@@ -8,7 +8,8 @@ const coffeeShopsReducer = (state = {loading: false, shops: []}, action) => {
       return {loading: false, shops: action.payload}
 
     case 'ADD_COFFEE_SHOP':
-      return {loading: false, shops: [...state.shops, action.payload]}
+      return console.log('this is the ADD_COFFEE_SHOP case')
+      // return {loading: false, shops: [...state.shops, action.payload]}
 
     default:
       return state

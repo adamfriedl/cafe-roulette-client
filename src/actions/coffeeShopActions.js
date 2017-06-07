@@ -20,8 +20,7 @@ export function addCoffeeShop(data) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
-    }).then(res => console.log(res))
-      // .then(shop => dispatch({type: 'ADD_COFFEE_SHOP', payload: shop}))
-      // .then(body => console.log(body))
+    }).then(res => res.json)
+      .then(shop => dispatch({type: 'ADD_COFFEE_SHOP', payload: shop}))
   }
 }
