@@ -4,7 +4,10 @@ import {bindActionCreators} from 'redux';
 import * as actions from '../actions/coffeeShopActions';
 import RaisedButton from 'material-ui/RaisedButton';
 import { ValidatorForm, TextValidator, SelectValidator} from 'react-material-ui-form-validator';
+import SelectField from 'material-ui/SelectField';
+import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
+import TextField from 'material-ui/TextField';
 
 
 class CoffeeShopsForm extends Component {
@@ -43,7 +46,8 @@ class CoffeeShopsForm extends Component {
       address: e.target.value
     });
   };
-  handleFoodChange(e) {
+  handleFoodChange(e, index, value) {
+    console.log('event is firing')
     this.setState({
       food: e.target.value
     });
@@ -56,110 +60,75 @@ class CoffeeShopsForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    // console.log(this.state)
+    console.log(this.state)
     this.props.actions.addCoffeeShop(this.state)
   }
 
   render() {
     return(
-      <ValidatorForm
-        ref='form'
-        onSubmit={e => this.handleSubmit(e)}
-        onError={errors => console.log(errors)}
-      >
-        <p>
-          <TextValidator
-              floatingLabelText="Name"
-              onChange={e => this.handleNameChange(e)}
-              name="name"
-              value={this.name}
-              validators={['required', 'isEmail']}
-              errorMessages={['this field is required', 'email is not valid']}
+      <div>
+        <form onSubmit={e => this.handleSubmit(e)} >
+
+          <TextField
+            hintText="Central Perk"
+            floatingLabelText="Name"
+            onChange={e => this.handleNameChange(e)}
           />
-        </p>
+          <br />
 
-        <p>
-          <TextValidator
-              floatingLabelText="Description"
-              onChange={e => this.handleDescriptionChange(e)}
-              name="description"
-              value={this.description}
-              validators={['required', 'isEmail']}
-              errorMessages={['this field is required', 'email is not valid']}
+          <TextField
+            hintText="Hipster customer service but delicious cold brew. "
+            floatingLabelText="Description"
+            onChange={e => this.handleDescriptionChange(e)}
+            multiLine={true}
+            rows={2}
+            rowsMax={4}
           />
-        </p>
+          <br />
 
-        <p>
-          <TextValidator
-              floatingLabelText="Website"
-              onChange={e => this.handleWebsiteChange(e)}
-              name="description"
-              value={this.website}
-              validators={['required', 'isEmail']}
-              errorMessages={['this field is required', 'email is not valid']}
+          <TextField
+            hintText="thejollygoat.com"
+            floatingLabelText="Website"
+            onChange={e => this.handleWebsiteChange(e)}
           />
-        </p>
+          <br />
 
-        <p>
-          <TextValidator
-              floatingLabelText="Address"
-              onChange={e => this.handleAddressChange(e)}
-              name="address"
-              value={this.address}
-              validators={['required', 'isEmail']}
-              errorMessages={['this field is required', 'email is not valid']}
+          <TextField
+            hintText="520 West 8th Avenue, New York, NY 10018"
+            floatingLabelText="Address"
+            onChange={e => this.handleAddressChange(e)}
+            multiLine={true}
+            rows={2}
+            rowsMax={3}
           />
-        </p>
+          <br />
 
-
-        <p>
-          <SelectValidator
-            floatingLabelText="Has Mad Delish Snacks?"
-            onChange={e => this.handleFoodChange(e)}
-            name="food"
-            >
-            <MenuItem value={1} primaryText="Yup " />
-            <MenuItem value={2} primaryText="Nope - all about the beans" />
-          </SelectValidator>
-        </p>
-
-
-        <p>
-          <TextValidator
-              floatingLabelText="Wallet Pain"
-              onChange={e => this.handlePriceRangeChange(e)}
-              name="price_range"
-              value={this.price_range}
-              validators={['required', 'isEmail']}
-              errorMessages={['this field is required', 'email is not valid']}
-          />
-        </p>
+          <SelectField
+            floatingLabelText="Mad Delish Snacks?"
+            value={this.state.food}
+            onChange={(e, index, value) => this.handleFoodChange(e, index, value)}
+          >
+            <MenuItem value={null} primaryText="" />
+            <MenuItem value={true} primaryText="Yes" />
+            <MenuItem value={false} primaryText="No" />
+          </SelectField>
+          <br />
 
 
 
-        <br />
-        <RaisedButton type="submit">Submit</RaisedButton>
-      </ValidatorForm>
+          <br />
+          <br />
 
-
-
-      // <div>
-      //   <form onSubmit={e => this.handleSubmit(e)} >
-      //     <p>
-      //       <label>Name</label>
-      //       <input type="text" id='name' onChange={e => this.handleNameChange(e)} placeholder='Bean There, Drank That' />
-      //     </p>
-      //     <input type="submit" />
-      //   </form>
-      // </div>
+          <RaisedButton type="submit" >Submit</RaisedButton>
+        </form>
+      </div>
     );
   }
 };
 
-// const mapDispatchToProps = dispatch => {
-//   console.log('inside mapDispatchToProps')
-//   return {actions: bindActionCreators(actions, dispatch)}
-// }
+const mapDispatchToProps = dispatch => {
+  console.log('inside mapDispatchToProps')
+  return {actions: bindActionCreators(actions, dispatch)}
+}
 
-export default CoffeeShopsForm
- // = connect(null, mapDispatchToProps)(CoffeeShopsForm);
+export default CoffeeShopsForm = connect(null, mapDispatchToProps)(CoffeeShopsForm);

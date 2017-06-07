@@ -8,7 +8,9 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {brown700, brown900} from 'material-ui/styles/colors';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {WrapperApp} from './containers/App';
+import injectTapEventPlugin from 'react-tap-event-plugin'
 
+injectTapEventPlugin()
 
 const store = createStore(
   coffeeShopsReducer,

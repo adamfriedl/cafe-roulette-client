@@ -10,6 +10,7 @@ import Recommendation from '../components/Recommendation'
 import CoffeeShopsForm from './CoffeeShopsForm'
 import CoffeeShopsIndex from '../components/CoffeeShopsIndex'
 
+
 class App extends Component {
 
   propTypes = {
