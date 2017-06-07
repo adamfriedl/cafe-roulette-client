@@ -17,12 +17,11 @@ export function addCoffeeShop(data) {
       method: 'POST',
       mode: 'CORS',
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
-    }).then(body => dispatch({type: 'ADD_COFFEE_SHOP', payload: body}))
-
-     // WHAT TO DO HERE? CONFUSED AS HOW TO POST
+    }).then(res => console.log(res))
+      // .then(shop => dispatch({type: 'ADD_COFFEE_SHOP', payload: shop}))
+      // .then(body => console.log(body))
   }
 }
