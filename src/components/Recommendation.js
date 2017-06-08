@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 const Recommendation = (props) => {
@@ -36,6 +37,7 @@ const Recommendation = (props) => {
         <strong>Estimated pain relative to my nonprofit salary?</strong><br />
         {shop.price_range}
       </p>
+      // <Link to='/coffeeshops/new'>Submit a Coffee Shop</Link>
     </div>
   )
 }

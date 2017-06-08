@@ -4,12 +4,10 @@ import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types'
 import * as actions from '../actions/coffeeShopActions'
 import CoffeeAppBar from '../components/CoffeeAppBar'
-import {Route, Link, Switch, BrowserRouter as Router} from 'react-router-dom';
+import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import Recommendation from '../components/Recommendation'
-// import {WrappedCoffeeShopsForm} from './CoffeeShopsForm'
 import CoffeeShopsForm from './CoffeeShopsForm'
 import CoffeeShopsIndex from '../components/CoffeeShopsIndex'
-
 
 class App extends Component {
 
@@ -26,17 +24,19 @@ class App extends Component {
 
     return (
       <div className="App">
-        <CoffeeAppBar />
-        {this.props.loading
-          ? <h2>Loading...</h2>
-          : <Router >
-              <Switch>
-                <Route exact path='/' render={props => <Recommendation shops={this.props.shops} {...props} />} />
-                <Route path='/coffeeshops/new' component={CoffeeShopsForm} />
-                <Route path='/coffeeshops' component={CoffeeShopsIndex} />
-              </Switch>
-            </Router>
-        }
+        <Router >
+          <div>
+            <CoffeeAppBar />
+            {this.props.loading
+              ? <h2>Loading...</h2>
+              : <Switch>
+                  <Route exact path='/' render={props => <Recommendation shops={this.props.shops} {...props} />} />
+                  <Route path='/coffeeshops/new' component={CoffeeShopsForm} />
+                  <Route path='/coffeeshops' component={CoffeeShopsIndex} />
+                </Switch>
+            }
+          </div>
+        </Router>
       </div>
     );
   }

@@ -1,40 +1,57 @@
-import React from 'react';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import AppBar from 'material-ui/AppBar'
-import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem';
-import IconButton from 'material-ui/IconButton'
-import CoffeeCupIcon from '../assets/icons/CoffeeCupIcon'
+import Drawer from 'material-ui/Drawer'
+import MenuItem from 'material-ui/MenuItem'
+import RaisedButton from 'material-ui/RaisedButton'
 
-export default class CoffeeAppBar extends React.Component {
+class CoffeeAppBar extends Component {
 
   constructor(props) {
-    super(props);
-    this.state = {open: false};
+    super(props)
+    this.state = {
+      open: false
+    }
   }
 
-  handleToggle = () =>
-  this.setState({
-    open: !this.state.open
-  });
+  toggleDrawer = () => this.setState({ open: !this.state.open })
 
   render() {
     return (
       <div>
         <AppBar
           title="Where's for Coffee?"
-          iconElementLeft={<IconButton><CoffeeCupIcon /></IconButton>}
-          onTouchTap={this.handleToggle}
+          iconClassNameRight="muidocs-icon-navigation-expand-more"
+          onLeftIconButtonTouchTap={this.toggleDrawer}
         />
+
         <Drawer
           docked={false}
+          width={300}
+          onRequestChange={this.toggleDrawer}
           open={this.state.open}
-          onRequestChange={this.handleToggle}
         >
-          <MenuItem>Get a Coffee Shop</MenuItem>
-          <MenuItem>Create a Coffee Shop Rec</MenuItem>
-          <MenuItem>See All the Shops</MenuItem>
+
+          <MenuItem
+            primaryText="Get a Coffee Shop"
+            containerElement={<Link to="/" />}
+            onTouchTap={() => this.toggleDrawer()}
+          />
+          <MenuItem
+            primaryText="Submit a Coffee Shop"
+            containerElement={<Link to="/coffeeshops/new" />}
+            onTouchTap={() => this.toggleDrawer()}
+          />
+          <MenuItem
+            primaryText="See 'Em All'"
+            containerElement={<Link to="/coffeeshops" />}
+            onTouchTap={() => this.toggleDrawer()}
+          />
         </Drawer>
+
       </div>
     )
   }
 }
+
+export default CoffeeAppBar
