@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/coffeeShopActions';
-import FlatButton from 'material-ui/FlatButton';
-import { ValidatorForm, TextValidator, SelectValidator} from 'react-material-ui-form-validator';
+import RaisedButton from 'material-ui/RaisedButton';
 import SelectField from 'material-ui/SelectField';
-import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
+import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 
 
 class CoffeeShopsForm extends Component {
@@ -67,13 +66,19 @@ class CoffeeShopsForm extends Component {
   render() {
     return(
       <div>
-        <form onSubmit={e => this.handleSubmit(e)} >
+        <ValidatorForm
+          name="myForm"
+          onSubmit={e => this.handleSubmit(e)}
+        >
 
-          <TextField
+          <TextValidator
             hintText="Central Perk"
+            name="CoffeeShopName"
             value={this.state.name}
             floatingLabelText="Name"
             onChange={e => this.handleNameChange(e)}
+            validators={['required']}
+            errorMessages={['this field is required']}
           />
           <br />
 
@@ -131,13 +136,13 @@ class CoffeeShopsForm extends Component {
           <br />
           <br />
 
-          <FlatButton
+          <RaisedButton
             type="submit"
-            secondary={true}
+            backgroundColor="accent1Color"
           >
             Submit
-          </FlatButton>
-        </form>
+          </RaisedButton>
+        </ValidatorForm>
       </div>
     );
   }

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import AppBar from 'material-ui/AppBar'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
+import IconButton from 'material-ui/IconButton'
+import CoffeeCupIcon from '../assets/icons/CoffeeCupIcon'
 
 class CoffeeAppBar extends Component {
 
@@ -20,7 +22,8 @@ class CoffeeAppBar extends Component {
       <div>
         <AppBar
           title="Where's for Coffee?"
-          iconClassNameRight="muidocs-icon-navigation-expand-more"
+          iconElementLeft={<IconButton><CoffeeCupIcon /></IconButton>}
+
           onLeftIconButtonTouchTap={this.toggleDrawer}
         />
 
