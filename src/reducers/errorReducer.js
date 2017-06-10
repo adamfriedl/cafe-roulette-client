@@ -1,15 +1,16 @@
-const errorsReducer = (state = null, action) => {
+const errorReducer = (state = '', action) => {
   switch (action.type) {
 
     case 'SUBMIT_FORM_SUCCESS':
-      return Object.assign({}, state, {message: 'Congrats, you did it!'})
+      // return 'this is the SUBMIT_FORM_SUCCESS case'
+      return 'Congrats, you did it!'
 
     case 'SUBMIT_FORM_FAILURE':
-      return Object.assign({}, state, {message: 'There was an error, yo!'})
+      return "Ugh, it didn't work!"
 
     default:
       return state
   }
 }
 
-export default errorsReducer
+export default errorReducer

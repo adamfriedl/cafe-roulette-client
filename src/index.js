@@ -4,6 +4,7 @@ import {Provider} from 'react-redux';
 import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk'
 import coffeeShopsReducer from './reducers/coffeeShopsReducer'
+import rootReducer from './reducers'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {brown600, brown800, lightblue500} from 'material-ui/styles/colors';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -13,7 +14,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
 
 const store = createStore(
-  coffeeShopsReducer,
+  rootReducer,
   compose(
     applyMiddleware(thunk),
     window.devToolsExtension ? window.devToolsExtension() : f => f

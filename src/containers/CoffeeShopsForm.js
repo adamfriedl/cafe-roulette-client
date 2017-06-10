@@ -20,7 +20,7 @@ class CoffeeShopsForm extends Component {
       website: '',
       address: '',
       food: '',
-      price_range: ''
+      price_range: '',
     }
   }
 
@@ -78,7 +78,7 @@ class CoffeeShopsForm extends Component {
 
         <h1>Add a Coffee Shop. You Can Do It!</h1>
 
-        <div className='message'>{this.state.message}</div>
+        <div className='message'>{this.props.message}</div>
 
         <ValidatorForm
           name="CoffeeShopForm"
@@ -174,9 +174,14 @@ class CoffeeShopsForm extends Component {
   }
 };
 
+const mapStateToProps = state => {
+  console.log('inside mapStateToProps')
+  return {message: state.message}
+}
+
 const mapDispatchToProps = dispatch => {
   console.log('inside mapDispatchToProps')
   return {actions: bindActionCreators(actions, dispatch)}
 }
 
-export default CoffeeShopsForm = connect(null, mapDispatchToProps)(CoffeeShopsForm);
+export default CoffeeShopsForm = connect(mapStateToProps, mapDispatchToProps)(CoffeeShopsForm);
