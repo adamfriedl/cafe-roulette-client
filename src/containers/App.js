@@ -37,7 +37,7 @@ class App extends Component {
                 : <Switch>
                     <Route exact path='/' render={props => <Recommendation shops={this.props.shops} {...props} />} />
                     <Route path='/coffeeshops/new' component={CoffeeShopsForm} />
-                    <Route path='/coffeeshops' component={CoffeeShopsIndex} />
+                    <Route path='/coffeeshops' render={props => <CoffeeShopsIndex shops={this.props.shops} {...props} />} />
                   </Switch>
               }
             </div>
