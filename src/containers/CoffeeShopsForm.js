@@ -40,17 +40,26 @@ class CoffeeShopsForm extends Component {
       website: e.target.value
     });
   };
+
+  handleWebsiteBlur(e) {
+    this.setState({
+      website: "http://" + e.target.value
+    });
+  };
+
   handleAddressChange(e) {
     this.setState({
       address: e.target.value
     });
   };
+
   handleFoodChange(e, index, value) {
     console.log('Selected ' + value)
     this.setState({
       food: value
     });
   };
+
   handlePriceRangeChange(e, index, value) {
     this.setState({
       price_range: value
@@ -116,6 +125,7 @@ class CoffeeShopsForm extends Component {
             value={this.state.website}
             floatingLabelText="Website"
             onChange={e => this.handleWebsiteChange(e)}
+            onBlur={e => this.handleWebsiteBlur(e)}
           />
           <br />
 
