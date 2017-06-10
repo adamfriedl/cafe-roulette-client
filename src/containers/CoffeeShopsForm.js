@@ -6,7 +6,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
-import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
+import { ValidatorForm, TextValidator, SelectValidator} from 'react-material-ui-form-validator';
 
 
 class CoffeeShopsForm extends Component {
@@ -61,13 +61,25 @@ class CoffeeShopsForm extends Component {
     e.preventDefault()
     console.log(this.state)
     this.props.actions.addCoffeeShop(this.state)
+
+    this.setState({
+      name: '',
+      description: '',
+      website: '',
+      address: '',
+      food: '',
+      price_range: ''
+    })
   }
 
   render() {
     return(
       <div>
+
+        <h1>Add a Coffee Shop. You Can Do It!</h1>
+
         <ValidatorForm
-          name="myForm"
+          name="CoffeeShopForm"
           onSubmit={e => this.handleSubmit(e)}
         >
 
@@ -78,61 +90,73 @@ class CoffeeShopsForm extends Component {
             floatingLabelText="Name"
             onChange={e => this.handleNameChange(e)}
             validators={['required']}
-            errorMessages={['this field is required']}
+            errorMessages={['This field is required, dude!']}
           />
           <br />
 
-          <TextField
+          <TextValidator
             hintText="Hipster customer service but delicious cold brew."
+            name="CoffeeShopDescription"
             value={this.state.description}
             floatingLabelText="Description"
             onChange={e => this.handleDescriptionChange(e)}
             multiLine={true}
             rows={2}
             rowsMax={4}
+            validators={['required']}
+            errorMessages={['This field is required, dude!']}
           />
           <br />
 
-          <TextField
+          <TextValidator
             hintText="thejollygoat.com"
+            name="CoffeeShopWebsite"
             value={this.state.website}
             floatingLabelText="Website"
             onChange={e => this.handleWebsiteChange(e)}
           />
           <br />
 
-          <TextField
+          <TextValidator
             hintText="520 West 8th Avenue, New York, NY 10018"
+            name="CoffeeShopAddress"
             value={this.state.address}
             floatingLabelText="Address"
             onChange={e => this.handleAddressChange(e)}
             multiLine={true}
             rows={2}
             rowsMax={3}
+            validators={['required']}
+            errorMessages={['This field is required, dude!']}
           />
           <br />
 
-          <SelectField
+          <SelectValidator
             floatingLabelText="Mad Delish Snacks?"
+            name="CoffeeShopFood"
             value={this.state.food}
             onChange={(e, index, value) => this.handleFoodChange(e, index, value)}
+            validators={['required']}
+            errorMessages={['This field is required, dude!']}
           >
             <MenuItem value={true} primaryText="Yes" />
             <MenuItem value={false} primaryText="No" />
-          </SelectField>
+          </SelectValidator>
           <br />
 
-          <SelectField
+          <SelectValidator
             floatingLabelText="Sad Nonprofit Wallet Pain"
+            name="CoffeeShopPriceRange"
             value={this.state.price_range}
             onChange={(e, index, value) => this.handlePriceRangeChange(e, index, value)}
+            validators={['required']}
+            errorMessages={['This field is required, dude!']}
           >
             <MenuItem value={1} primaryText="$ - They're giving it away." />
             <MenuItem value={2} primaryText="$$ - Hurts so tasty." />
             <MenuItem value={3} primaryText="$$$ - Splurge, baby!" />
 
-          </SelectField>
-
+          </SelectValidator>
           <br />
           <br />
 

@@ -22,19 +22,25 @@ class App extends Component {
 
   render() {
 
+    const containerStyle = {
+      margin: 30
+    }
+
     return (
       <div className="App">
         <Router >
           <div>
             <CoffeeAppBar />
-            {this.props.loading
-              ? <h2>Loading...</h2>
-              : <Switch>
-                  <Route exact path='/' render={props => <Recommendation shops={this.props.shops} {...props} />} />
-                  <Route path='/coffeeshops/new' component={CoffeeShopsForm} />
-                  <Route path='/coffeeshops' component={CoffeeShopsIndex} />
-                </Switch>
-            }
+            <div style={containerStyle}>
+              {this.props.loading
+                ? <h2>Loading...</h2>
+                : <Switch>
+                    <Route exact path='/' render={props => <Recommendation shops={this.props.shops} {...props} />} />
+                    <Route path='/coffeeshops/new' component={CoffeeShopsForm} />
+                    <Route path='/coffeeshops' component={CoffeeShopsIndex} />
+                  </Switch>
+              }
+            </div>
           </div>
         </Router>
       </div>
@@ -54,6 +60,5 @@ const mapDispatchToProps = dispatch => {
   console.log('inside mapDispatchToProps')
   return {actions: bindActionCreators(actions, dispatch)}
 }
-
 
 export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App)

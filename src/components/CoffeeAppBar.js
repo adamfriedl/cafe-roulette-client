@@ -18,18 +18,18 @@ class CoffeeAppBar extends Component {
   toggleDrawer = () => this.setState({ open: !this.state.open })
 
   render() {
+
     return (
       <div>
         <AppBar
           title="Where's for Coffee?"
           iconElementLeft={<IconButton><CoffeeCupIcon /></IconButton>}
-
           onLeftIconButtonTouchTap={this.toggleDrawer}
         />
 
         <Drawer
           docked={false}
-          width={300}
+          width={200}
           onRequestChange={this.toggleDrawer}
           open={this.state.open}
         >
