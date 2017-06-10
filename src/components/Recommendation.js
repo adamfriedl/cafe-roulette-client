@@ -20,18 +20,18 @@ const Recommendation = (props) => {
         Goodnight kittens and goodnight mittens. Goodnight clocks and goodnight <a href='{shop.website}'>{shop.name}</a>
       </p>
       <p>
-        <strong>Fun Fact</strong><br />
+        <strong>Description</strong><br />
         {shop.description}
       </p>
       <p>
-        <strong>Tasty Food Things?</strong><br />
+        <strong>Mad Delish Snacks?</strong><br />
         {shop.food
-          ? <em>Thumbs up!</em>
-          : <em>NotYum!</em>
+          ? <em>You know it!</em>
+          : <em>Negative!</em>
         }
       </p>
       <p>
-        <strong>Estimated pain relative to my nonprofit salary?</strong><br />
+        <strong>Nonprofit Wallet Pain?</strong><br />
         {shop.price_range}
       </p>
     </div>
