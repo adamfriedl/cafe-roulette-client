@@ -35,9 +35,9 @@ class App extends Component {
               {this.props.loading
                 ? <h2>Loading...</h2>
                 : <Switch>
-                    <Route exact path='/' render={props => <Recommendation shops={this.props.shops} {...props} />} />
+                    <Route exact path='/' render={props => <Recommendation shops={this.props.shops} />} />
                     <Route path='/coffeeshops/new' component={CoffeeShopsForm} />
-                    <Route path='/coffeeshops' render={props => <CoffeeShopsIndex shops={this.props.shops} {...props} />} />
+                    <Route path='/coffeeshops' render={props => <CoffeeShopsIndex shops={this.props.shops} />} />
                   </Switch>
               }
             </div>

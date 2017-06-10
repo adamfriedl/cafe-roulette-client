@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom'
 
 const Recommendation = (props) => {
 
-
-
-
   let shop = Object.assign({}, props.shops[Math.floor(Math.random()*props.shops.length)])
 
   let pStyle = {
