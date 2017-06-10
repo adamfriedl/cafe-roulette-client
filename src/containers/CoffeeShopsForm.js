@@ -78,6 +78,8 @@ class CoffeeShopsForm extends Component {
 
         <h1>Add a Coffee Shop. You Can Do It!</h1>
 
+        <div className='message'>{this.state.message}</div>
+
         <ValidatorForm
           name="CoffeeShopForm"
           onSubmit={e => this.handleSubmit(e)}

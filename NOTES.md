@@ -1,8 +1,10 @@
 # To Do
 - Success/Error messages
-- Create index page
 - Style
 
+- Create index page
+  - Display url properly
+  - Display price_range properly
 
 
 

@@ -20,7 +20,13 @@ export function addCoffeeShop(data) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
-    }).then(res => res.json)
-      .then(shop => dispatch({type: 'ADD_COFFEE_SHOP', payload: shop}))
+    }).then(
+      res => dispatch({type: 'SUBMIT_FORM_SUCCESS', payload: res}),
+      error => dispatch({type: 'SUBMIT_FORM_FAILURE', error: error,
+      suppressGlobalErrorNotification: (
+        error.response &&
+        error.response.status === 400
+      )
+    }))
   }
 }
