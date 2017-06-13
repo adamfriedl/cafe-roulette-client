@@ -14,6 +14,7 @@ class CoffeeShopsForm extends Component {
   constructor() {
     super()
 
+
     this.state = {
       name: '',
       description: '',
@@ -22,6 +23,10 @@ class CoffeeShopsForm extends Component {
       food: '',
       price_range: '',
     }
+  }
+
+  componentDidMount() {
+    this.props.actions.resetSuccessHandler()
   }
 
   handleNameChange(e) {
@@ -38,12 +43,6 @@ class CoffeeShopsForm extends Component {
   handleWebsiteChange(e) {
     this.setState({
       website: e.target.value
-    });
-  };
-
-  handleWebsiteBlur(e) {
-    this.setState({
-      website: "http://" + e.target.value
     });
   };
 
@@ -125,7 +124,10 @@ class CoffeeShopsForm extends Component {
             value={this.state.website}
             floatingLabelText="Website"
             onChange={e => this.handleWebsiteChange(e)}
-            onBlur={e => this.handleWebsiteBlur(e)}
+            validators={[
+              'required'
+            ]}
+            errorMessages={['This field is required, dude!']}
           />
           <br />
 

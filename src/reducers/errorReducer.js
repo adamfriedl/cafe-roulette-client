@@ -5,6 +5,9 @@ const errorReducer = (state = '', action) => {
       // return 'this is the SUBMIT_FORM_SUCCESS case'
       return 'Congrats, you did it!'
 
+    case 'RESET_SUCCESS_HANDLER':
+      return ''
+
     case 'SUBMIT_FORM_FAILURE':
       return "Ugh, it didn't work!"
 

@@ -30,3 +30,10 @@ export function addCoffeeShop(data) {
     }))
   }
 }
+
+export function resetSuccessHandler() {
+
+  return function(dispatch) {
+    dispatch({type: 'RESET_SUCCESS_HANDLER'})
+  }
+}
