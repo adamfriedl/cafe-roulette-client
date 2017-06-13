@@ -1,8 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import RaisedButton from 'material-ui/RaisedButton';
 
 
 const Recommendation = (props) => {
+
 
   let shop = Object.assign({}, props.shops[Math.floor(Math.random()*props.shops.length)])
 
@@ -11,7 +12,7 @@ const Recommendation = (props) => {
     lineHeight: 1.3,
     fontStyle:'italic',
     fontWeight:'bold',
-    textTransform:'uppercase',
+    textTransform:'uppercase'
   }
 
   return (
@@ -34,6 +35,10 @@ const Recommendation = (props) => {
         <strong>Nonprofit Wallet Pain?</strong><br />
         {shop.price_range}
       </p>
+
+      <RaisedButton>
+        Gimme another!
+      </RaisedButton>
     </div>
   )
 }

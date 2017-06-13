@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk'
-import coffeeShopsReducer from './reducers/coffeeShopsReducer'
 import rootReducer from './reducers'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {brown600, brown800, lightblue500} from 'material-ui/styles/colors';

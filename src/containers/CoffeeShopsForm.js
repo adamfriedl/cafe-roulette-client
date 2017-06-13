@@ -3,9 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/coffeeShopActions';
 import RaisedButton from 'material-ui/RaisedButton';
-import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-import TextField from 'material-ui/TextField';
 import { ValidatorForm, TextValidator, SelectValidator} from 'react-material-ui-form-validator';
 
 
@@ -197,12 +195,10 @@ class CoffeeShopsForm extends Component {
 };
 
 const mapStateToProps = state => {
-  console.log('inside mapStateToProps')
   return {message: state.message}
 }
 
 const mapDispatchToProps = dispatch => {
-  console.log('inside mapDispatchToProps')
   return {actions: bindActionCreators(actions, dispatch)}
 }
 
