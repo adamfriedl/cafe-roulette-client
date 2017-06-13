@@ -1,5 +1,4 @@
 # To Do
-- Success/Error messages
 - Style
 
 - Create index page

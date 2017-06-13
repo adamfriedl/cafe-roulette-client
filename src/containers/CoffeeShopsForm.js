@@ -167,9 +167,18 @@ class CoffeeShopsForm extends Component {
             validators={['required']}
             errorMessages={['This field is required, dude!']}
           >
-            <MenuItem value={1} primaryText="$ - They're giving it away." />
-            <MenuItem value={2} primaryText="$$ - Hurts so tasty." />
-            <MenuItem value={3} primaryText="$$$ - Splurge, baby!" />
+            <MenuItem
+              value={"$ - They're giving it away!"}
+              primaryText="$ - They're giving it away!"
+            />
+            <MenuItem
+              value={"$$ - Not totally ridiculous!"}
+              primaryText="$$ - Not totally ridiculous!"
+            />
+            <MenuItem
+              value={"$$$ - Julian is buying!"}
+              primaryText="$$$ - Julian is buying!"
+            />
 
           </SelectValidator>
           <br />
