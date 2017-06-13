@@ -14,7 +14,6 @@ class CoffeeShopsForm extends Component {
   constructor() {
     super()
 
-
     this.state = {
       name: '',
       description: '',
@@ -78,6 +77,8 @@ class CoffeeShopsForm extends Component {
       food: '',
       price_range: ''
     })
+
+    window.scrollTo(0, 0)
   }
 
   render() {
