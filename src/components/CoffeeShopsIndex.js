@@ -60,6 +60,7 @@ class CoffeeShopsIndex extends Component {
         <button onClick={() => this.upVote(shop.id)}>
           Upvote!
         </button>
+        <br />
 
         <button
           onClick={() => this.update(shop.id)}
