@@ -9,21 +9,7 @@ class CoffeeShopsIndex extends Component {
     this.state = {
       votes: 0
     }
-  }
 
-  upVote(id) {
-    console.log(id)
-    this.setState({
-    votes: this.state.votes + 1
-    })
-  }
-
-  update(id) {
-    fetch('http://localhost:9000/coffee_shops/')
-        .then(res => res.json())
-        .then(shops => console.log(
-          shops.filter(shop => id === shop.id)
-        ))
   }
 
   render() {
@@ -53,20 +39,7 @@ class CoffeeShopsIndex extends Component {
           <strong>Wallet Pain</strong><br />
           {shop.price_range}
         </p>
-        <p>
-          Votes: {this.state.votes}
-        </p>
 
-        <button onClick={() => this.upVote(shop.id)}>
-          Upvote!
-        </button>
-        <br />
-
-        <button
-          onClick={() => this.update(shop.id)}
-        >
-          Update!
-        </button>
       </div>
     ))
 
