@@ -13,11 +13,10 @@ class CoffeeShopsIndex extends Component {
   }
 
   update(id) {
-    fetch('http://localhost:9000/coffee_shops/')
-        .then(res => res.json())
-        .then(shops => console.log(
-          shops.filter(shop => id === shop.id)
-        ))
+    fetch('http://localhost:9000/coffee_shops/' + id)
+      .then(res => res.json())
+      .then(shop => console.log(shop)
+    )
   }
 
   render() {
