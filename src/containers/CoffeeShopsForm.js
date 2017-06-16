@@ -18,7 +18,7 @@ class CoffeeShopsForm extends Component {
       website: '',
       address: '',
       food: '',
-      price_range: '',
+      price_range: ''
     }
   }
 

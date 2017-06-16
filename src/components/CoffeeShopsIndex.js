@@ -3,13 +3,20 @@ import React, { Component } from 'react';
 
 class CoffeeShopsIndex extends Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
-    this.state = {
-      votes: 0
-    }
+    let shops = this.props.shops
+    shops.map((shop, index) => {
+      shop.state = {
+        votes: 0
+      }
+    })
+  }
 
+  upVote(id) {
+    console.log(this.props.shops.filter(shop => shop.id === id)[0].state.votes += 1)
+      // votes: this.props.shops[0].state.votes + 1
   }
 
   update(id) {
@@ -21,7 +28,7 @@ class CoffeeShopsIndex extends Component {
 
   render() {
     let shops = this.props.shops.map(shop => (
-      <div id={shop.id}>
+      <div key={shop.id}>
         <h2>{shop.name}</h2>
         <p>
           <strong>Description</strong><br />
@@ -46,6 +53,15 @@ class CoffeeShopsIndex extends Component {
           <strong>Wallet Pain</strong><br />
           {shop.price_range}
         </p>
+        <p>
+          Votes: {shop.state.votes}
+        </p>
+
+        <button
+          onClick={() => this.upVote(shop.id)}>
+          Upvote!
+        </button>
+        <br />
 
         <button
           onClick={() => this.update(shop.id)}
