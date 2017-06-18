@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as actions from '../actions/coffeeShopActions';
 
 
 class CoffeeShopsIndex extends Component {
@@ -6,17 +9,16 @@ class CoffeeShopsIndex extends Component {
   constructor(props) {
     super(props)
 
-    let shops = this.props.shops
-    shops.map((shop, index) => {
-      shop.state = {
-        votes: 0
-      }
-    })
   }
 
-  upVote(id) {
-    console.log(this.props.shops.filter(shop => shop.id === id)[0].state.votes += 1)
-      // votes: this.props.shops[0].state.votes + 1
+  // componentWillReceiveProps(nextProps) {
+  //
+  // }
+
+  upVote(id, votes) {
+    debugger
+    let data = {votes: votes + 1}
+    this.props.actions.upVote(id, data)
   }
 
   update(id) {
@@ -54,11 +56,11 @@ class CoffeeShopsIndex extends Component {
           {shop.price_range}
         </p>
         <p>
-          Votes: {shop.state.votes}
+          Votes: {shop.votes}
         </p>
 
         <button
-          onClick={() => this.upVote(shop.id)}>
+          onClick={() => this.upVote(shop.id, shop.votes)}>
           Upvote!
         </button>
         <br />
@@ -81,4 +83,8 @@ class CoffeeShopsIndex extends Component {
   }
 }
 
-export default CoffeeShopsIndex
+const mapDispatchToProps = dispatch => {
+  return {actions: bindActionCreators(actions, dispatch)}
+}
+
+export default CoffeeShopsIndex = connect(null, mapDispatchToProps)(CoffeeShopsIndex);

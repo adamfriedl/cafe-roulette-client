@@ -4,6 +4,10 @@ const coffeeShopsReducer = (state = [], action) => {
     case 'FETCH_COFFEE_SHOPS':
       return action.payload
 
+    // case 'UPVOTE':
+    //   const newState = {...state}
+    //   newState ({...state}, action.payload)
+
     default:
       return state
   }

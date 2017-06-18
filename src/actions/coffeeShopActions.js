@@ -31,6 +31,28 @@ export function addCoffeeShop(data) {
   }
 }
 
+export function upVote(id, data) {
+
+  return function(dispatch) {
+    return fetch('http://localhost:9000/coffee_shops/' + id, {
+      method: 'PATCH',
+      mode: 'CORS',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    // }).then(
+    //   res => dispatch({type: 'SUBMIT_FORM_SUCCESS', payload: res}),
+    //   error => dispatch({type: 'SUBMIT_FORM_FAILURE', error: error,
+    //   suppressGlobalErrorNotification: (
+    //     error.response &&
+    //     error.response.status === 400
+    //   )
+    }).then(res => res.json())
+      .then(vote => dispatch({type: 'UPVOTE', payload: vote}))
+  }
+}
+
 export function resetSuccessHandler() {
 
   return function(dispatch) {
