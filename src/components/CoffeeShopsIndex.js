@@ -1,4 +1,5 @@
 import React from 'react'
+import Votes from './Votes'
 
 const CoffeeShopsIndex = (props) => {
 
@@ -28,6 +29,7 @@ const CoffeeShopsIndex = (props) => {
         <strong>Wallet Pain</strong><br />
         {shop.price_range}
       </p>
+      <Votes />
     </div>
   ))
 
