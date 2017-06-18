@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as actions from '../actions/coffeeShopActions';
-
+import * as actions from '../actions/coffeeShopActions'
+import Votes from './Votes'
 
 class CoffeeShopsIndex extends Component {
 
@@ -55,15 +55,8 @@ class CoffeeShopsIndex extends Component {
           <strong>Wallet Pain</strong><br />
           {shop.price_range}
         </p>
-        <p>
-          Votes: {shop.votes}
-        </p>
 
-        <button
-          onClick={() => this.upVote(shop.id, shop.votes)}>
-          Upvote!
-        </button>
-        <br />
+        <Votes />
 
         <button
           onClick={() => this.update(shop.id)}
