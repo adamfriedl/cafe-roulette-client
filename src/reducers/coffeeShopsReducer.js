@@ -4,9 +4,8 @@ const coffeeShopsReducer = (state = [], action) => {
     case 'FETCH_COFFEE_SHOPS':
       return action.payload
 
-    // case 'UPVOTE':
-    //   const newState = {...state}
-    //   newState ({...state}, action.payload)
+    case 'UPVOTE_SHOP':
+      // NOT CURRENTLY STRUCTURING DATA CORRECTLY
 
     default:
       return state

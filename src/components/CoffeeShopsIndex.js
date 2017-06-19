@@ -11,16 +11,6 @@ class CoffeeShopsIndex extends Component {
 
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //
-  // }
-
-  upVote(id, votes) {
-    debugger
-    let data = {votes: votes + 1}
-    this.props.actions.upVote(id, data)
-  }
-
   update(id) {
     fetch('http://localhost:9000/coffee_shops/' + id)
       .then(res => res.json())
@@ -56,7 +46,7 @@ class CoffeeShopsIndex extends Component {
           {shop.price_range}
         </p>
 
-        <Votes />
+        <Votes shop={shop}/>
 
         <button
           onClick={() => this.update(shop.id)}

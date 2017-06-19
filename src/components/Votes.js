@@ -1,25 +1,41 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as actions from '../actions/coffeeShopActions'
 
 class Votes extends Component {
+  constructor(props) {
+    super(props)
 
-  voteButtonClick() {
-    this.setState({
-      votes: this.state.votes + 1
-    })
+    console.log(this.props)
   }
 
+
+  voteButtonClick(id, voteTicker) {
+    this.props.actions.upVote(id, voteTicker)
+  }
+
+
   render() {
+
+    const voteTicker = {
+      votes: this.props.shop.votes + 1
+    }
+
     return(
       <div>
         <p>
-          Votes: {this.props.votes}
+          Votes: {this.props.shop.votes}
         </p>
-
-        <button onClick={() => this.voteButtonClick()}>Upvote</button>
+        <button onClick={() => this.voteButtonClick(this.props.shop.id, voteTicker)}>Upvote</button>
       </div>
 
     )
   }
 }
 
-export default Votes
+const mapDispatchToProps = dispatch => {
+  return {actions: bindActionCreators(actions, dispatch)}
+}
+
+export default Votes = connect(null, mapDispatchToProps)(Votes);

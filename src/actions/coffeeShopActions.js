@@ -31,7 +31,7 @@ export function addCoffeeShop(data) {
   }
 }
 
-export function upVote(id, data) {
+export function upVote(id, voteTicker) {
 
   return function(dispatch) {
     return fetch('http://localhost:9000/coffee_shops/' + id, {
@@ -40,16 +40,10 @@ export function upVote(id, data) {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(data)
-    // }).then(
-    //   res => dispatch({type: 'SUBMIT_FORM_SUCCESS', payload: res}),
-    //   error => dispatch({type: 'SUBMIT_FORM_FAILURE', error: error,
-    //   suppressGlobalErrorNotification: (
-    //     error.response &&
-    //     error.response.status === 400
-    //   )
+      body: JSON.stringify(voteTicker)
     }).then(res => res.json())
-      .then(vote => dispatch({type: 'UPVOTE', payload: vote}))
+      .then(shop => console.log(shop))
+      .then(shop => dispatch({type: 'UPVOTE_SHOP', payload: shop}))
   }
 }
 
