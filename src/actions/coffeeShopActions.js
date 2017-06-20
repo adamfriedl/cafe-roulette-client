@@ -40,10 +40,12 @@ export function upVote(id, voteTicker) {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(voteTicker)
+      body: JSON.stringify({votes: voteTicker})
     }).then(res => res.json())
       .then(shop => console.log(shop))
-      .then(shop => dispatch({type: 'UPVOTE_SHOP', payload: shop}))
+      .then(shop => dispatch({type: 'UPVOTE_SHOP', id, votes: voteTicker}))
+
+        // id, votes: voteTicker})) //STATE SHOULD BE UPDATING NOWshop
   }
 }
 

@@ -4,8 +4,19 @@ const coffeeShopsReducer = (state = [], action) => {
     case 'FETCH_COFFEE_SHOPS':
       return action.payload
 
-    case 'UPVOTE_SHOP':
-      // NOT CURRENTLY STRUCTURING DATA CORRECTLY
+    case 'UPVOTE_SHOP': {
+      return state.map(shop => {
+        if (shop.id !== action.id) {
+          debugger
+          return shop
+        }
+
+        return Object.assign({}, shop,
+          {votes: action.votes}
+        )
+      })
+    }
+
 
     default:
       return state
