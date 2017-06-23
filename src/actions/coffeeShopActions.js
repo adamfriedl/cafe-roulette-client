@@ -45,7 +45,6 @@ export function upVote(id, voteTicker) {
       .then(shop => console.log(shop))
       .then(shop => dispatch({type: 'UPVOTE_SHOP', id, votes: voteTicker}))
 
-        // id, votes: voteTicker})) //STATE SHOULD BE UPDATING NOWshop
   }
 }
 

@@ -1,51 +1,10 @@
-import React from 'react'
-import Votes from './Votes'
-
-const CoffeeShopsIndex = (props) => {
-
-  let shops = props.shops.map(shop => (
-    <div>
-      <h2>{shop.name}</h2>
-      <p>
-        <strong>Description</strong><br />
-        {shop.description}
-      </p>
-      <p>
-        <strong>Website</strong><br />
-        <a href={shop.website}>{shop.website}</a>
-      </p>
-      <p>
-        <strong>Address</strong><br />
-        {shop.address}
-      </p>
-      <p>
-        <strong>Mad Delish Snacks?</strong><br />
-        {shop.food
-          ? <span>You know it!</span>
-          : <span>Negative!</span>
-        }
-      </p>
-      <p>
-        <strong>Wallet Pain</strong><br />
-        {shop.price_range}
-      </p>
-      <Votes />
-    </div>
-  ))
-
-  return(
-    <div>
-      <h1>Every Single Awesome Shop</h1>
-      {shops}
-    </div>
-  )
-=======
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/coffeeShopActions'
-import Votes from './Votes'
-import thumbsUp from '../assets/images/thumbs-up.jpg'
+import thumbsUp from '../assets/images/thumbs-up.png'
+import gulp from '../assets/images/gulp.png'
+import CoffeeShopDetails from './CoffeeShopDetails'
 
 class CoffeeShopsIndex extends Component {
 
@@ -57,44 +16,27 @@ class CoffeeShopsIndex extends Component {
   }
 
   render() {
+    let flexContainer = {
+      display: 'flex',
+      justifyContent: 'left',
+      alignItems: 'center',
+      marginRight: 40,
+      flexWrap: 'wrap'
+    }
+
     let shops = this.props.shops.map(shop => (
       <div key={shop.id}>
-        <h2>{shop.name}</h2>
-        <p>
-          <strong>Description</strong><br />
+        <h2><a href='{shop.website}'>{shop.name}</a></h2>
+          <h3>Description</h3>
           {shop.description}
-        </p>
-        <p>
-          <strong>Website</strong><br />
+          <h3>Website</h3>
           <a href={shop.website}>{shop.website}</a>
-        </p>
-        <p>
-          <strong>Address</strong><br />
+          <h3>Address</h3>
           {shop.address}
-        </p>
-        <p>
-          <strong>Mad Delish Snacks?</strong><br />
-          {shop.food
-            ? <img
-            src={thumbsUp}
-            alt={'Thumbs up!'}
-            height={96}
-            width={96} />
-            : <span>Negative!</span>
-          }
-        </p>
-        <p>
-          <strong>Wallet Pain</strong><br />
-          {shop.price_range}
-        </p>
+          <CoffeeShopDetails
+            shop={shop}
+          />
 
-        <Votes shop={shop}/>
-
-        <button
-          onClick={() => this.update(shop.id)}
-        >
-          Update!
-        </button>
 
       </div>
     ))

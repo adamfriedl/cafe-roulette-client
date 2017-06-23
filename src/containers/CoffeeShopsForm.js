@@ -179,25 +179,21 @@ class CoffeeShopsForm extends Component {
               errorMessages={['This field is required, dude!']}
             >
               <MenuItem
-                value={"$ - They're giving it away!"}
-                primaryText="$ - They're giving it away!"
+                value={"$"}
+                primaryText="$ - Like they're giving it away!"
               />
               <MenuItem
-                value={"$$ - Not totally ridiculous!"}
-                primaryText="$$ - Not totally ridiculous!"
+                value={"$$"}
+                primaryText="$$ - No worries, Julian is buying!"
               />
-              <MenuItem
-                value={"$$$ - Julian is buying!"}
-                primaryText="$$$ - Julian is buying!"
-              />
+
 
             </SelectValidator>
             <br />
             <br />
 
             <RaisedButton
-              type="submit"
-              backgroundColor="accent1Color"
+              type="submit"            
             >
               Submit
             </RaisedButton>
