@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react'
 import Votes from './Votes'
 
@@ -112,3 +111,5 @@ class CoffeeShopsIndex extends Component {
 const mapDispatchToProps = dispatch => {
   return {actions: bindActionCreators(actions, dispatch)}
 }
+
+export default CoffeeShopsIndex = connect(null, mapDispatchToProps)(CoffeeShopsIndex)
