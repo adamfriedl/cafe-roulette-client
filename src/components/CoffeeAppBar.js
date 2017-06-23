@@ -22,7 +22,7 @@ class CoffeeAppBar extends Component {
     return (
       <div>
         <AppBar
-          title="Where's for Coffee?"
+          title="Where's for Coffee, 520?"
           iconElementLeft={<IconButton><CoffeeCupIcon /></IconButton>}
           onLeftIconButtonTouchTap={this.toggleDrawer}
         />

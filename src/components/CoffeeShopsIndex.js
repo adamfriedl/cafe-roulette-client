@@ -3,13 +3,9 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/coffeeShopActions'
 import Votes from './Votes'
+import thumbsUp from '../assets/images/thumbs-up.jpg'
 
 class CoffeeShopsIndex extends Component {
-
-  constructor(props) {
-    super(props)
-
-  }
 
   update(id) {
     fetch('http://localhost:9000/coffee_shops/' + id)
@@ -37,7 +33,11 @@ class CoffeeShopsIndex extends Component {
         <p>
           <strong>Mad Delish Snacks?</strong><br />
           {shop.food
-            ? <span>You know it!</span>
+            ? <img
+            src={thumbsUp}
+            alt={'Thumbs up!'}
+            height={96}
+            width={96} />
             : <span>Negative!</span>
           }
         </p>

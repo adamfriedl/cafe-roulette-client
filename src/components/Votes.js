@@ -19,7 +19,7 @@ class Votes extends Component {
   render() {
 
     const voteTicker = this.props.shop.votes + 1
-    
+
 
     return(
       <div>
