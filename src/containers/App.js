@@ -8,26 +8,32 @@ import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import Recommendation from '../components/Recommendation'
 import CoffeeShopsForm from './CoffeeShopsForm'
 import CoffeeShopsIndex from '../components/CoffeeShopsIndex'
+import Rubik from '../assets/fonts/Rubik/Rubik-Black.ttf'
 
 class App extends Component {
 
-  propTypes = {
+  static propTypes = {
     loading: PropTypes.bool
   }
 
   componentDidMount() {
-    console.log('inside of componentDidMount')
     this.props.actions.fetchCoffeeShops()
   }
 
   render() {
 
+    const appStyle = {
+      fontFamily: 'Rubik',
+      fontSize: 18,
+      margin: 5
+    }
+
     const containerStyle = {
-      margin: 30
+      margin: 40,
     }
 
     return (
-      <div className="App">
+      <div className="App" style={appStyle}>
         <Router >
           <div>
             <CoffeeAppBar />
@@ -49,7 +55,6 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log('inside mapStateToProps')
   return {
     loading: state.loading,
     shops: state.shops
@@ -57,7 +62,6 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  console.log('inside mapDispatchToProps')
   return {actions: bindActionCreators(actions, dispatch)}
 }
 

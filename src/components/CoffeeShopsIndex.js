@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 import Votes from './Votes'
 
@@ -39,6 +40,75 @@ const CoffeeShopsIndex = (props) => {
       {shops}
     </div>
   )
+=======
+import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as actions from '../actions/coffeeShopActions'
+import Votes from './Votes'
+import thumbsUp from '../assets/images/thumbs-up.jpg'
+
+class CoffeeShopsIndex extends Component {
+
+  update(id) {
+    fetch('http://localhost:9000/coffee_shops/' + id)
+      .then(res => res.json())
+      .then(shop => console.log(shop)
+    )
+  }
+
+  render() {
+    let shops = this.props.shops.map(shop => (
+      <div key={shop.id}>
+        <h2>{shop.name}</h2>
+        <p>
+          <strong>Description</strong><br />
+          {shop.description}
+        </p>
+        <p>
+          <strong>Website</strong><br />
+          <a href={shop.website}>{shop.website}</a>
+        </p>
+        <p>
+          <strong>Address</strong><br />
+          {shop.address}
+        </p>
+        <p>
+          <strong>Mad Delish Snacks?</strong><br />
+          {shop.food
+            ? <img
+            src={thumbsUp}
+            alt={'Thumbs up!'}
+            height={96}
+            width={96} />
+            : <span>Negative!</span>
+          }
+        </p>
+        <p>
+          <strong>Wallet Pain</strong><br />
+          {shop.price_range}
+        </p>
+
+        <Votes shop={shop}/>
+
+        <button
+          onClick={() => this.update(shop.id)}
+        >
+          Update!
+        </button>
+
+      </div>
+    ))
+
+    return(
+      <div>
+        <h1>Every Single Awesome Shop</h1>
+        {shops}
+      </div>
+    )
+  }
 }
 
-export default CoffeeShopsIndex
+const mapDispatchToProps = dispatch => {
+  return {actions: bindActionCreators(actions, dispatch)}
+}
