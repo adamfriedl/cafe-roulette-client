@@ -8,7 +8,7 @@ import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import Recommendation from '../components/Recommendation'
 import CoffeeShopsForm from './CoffeeShopsForm'
 import CoffeeShopsIndex from '../components/CoffeeShopsIndex'
-import Rubik from '../assets/fonts/Rubik/Rubik-Black.ttf'
+import PatrickHandSC from '../assets/fonts/Patrick_Hand_SC/PatrickHandSC-Regular.ttf'
 
 class App extends Component {
 
@@ -23,9 +23,9 @@ class App extends Component {
   render() {
 
     const appStyle = {
-      fontFamily: 'Rubik',
-      fontSize: 18,
-      margin: 5
+      fontFamily: 'Patrick Hand SC',
+      lineHeight: '1.2',
+      // fontSize: '1em'
     }
 
     const containerStyle = {

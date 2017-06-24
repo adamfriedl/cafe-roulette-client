@@ -1,45 +1,56 @@
 import React from 'react'
-import RaisedButton from 'material-ui/RaisedButton';
-import Rubik from '../assets/fonts/Rubik/Rubik-Black.ttf'
+import FlatButton from 'material-ui/FlatButton';
+import CoffeeShopDetails from './CoffeeShopDetails'
+import greetings from '../localData/greetings'
+
 
 const Recommendation = (props) => {
 
+  // function gimmeNewShop() {
+  //   console.log('Hello there!')
+  //   let shop = Object.assign({}, props.shops[Math.floor(Math.random()*props.shops.length)])
+  //   return shop
+  // }
+
+  let greeting = greetings[Math.floor(Math.random()*greetings.length)]
+
   let shop = Object.assign({}, props.shops[Math.floor(Math.random()*props.shops.length)])
 
-  let pStyle = {
-    // fontFamily: 'Rubik',
-    fontSize: 40,
-    lineHeight: 1.3,
-    // textTransform:'uppercase'
+  let greetingStyle = {
+    fontSize: '3em',
+    lineHeight: 1.2
   }
+
+  const CustomFlatButton = (props) => (
+    <FlatButton {...props}
+      style={{color: 'white', margin: 20, backgroundColor: 'red'}}
+    />
+  )
 
   return (
     <div>
-      <p style={pStyle}>
-        Goodnight kittens and goodnight mittens. Goodnight clocks and goodnight <a href='{shop.website}'>{shop.name}</a>
+      <p style={greetingStyle}>
+        {greeting} <a href='{shop.website}'>{shop.name}</a>
       </p>
 
       <div>
-        <p>
-          <strong>Description</strong><br />
-          {shop.description}
-        </p>
-        <p>
-          <strong>Mad Delish Snacks?</strong><br />
-          {shop.food
-            ? <em>You know it!</em>
-            : <em>Negative!</em>
-          }
-        </p>
-        <p>
-          <strong>Nonprofit Wallet Pain?</strong><br />
-          {shop.price_range}
-        </p>
+        <h1>Description</h1>
+        <p style={{fontSize: '1.3em', marginTop: -20}}>{shop.description}</p>
+
+      <CoffeeShopDetails
+          shop={shop}
+        />
       </div>
 
-      <RaisedButton>
-        Gimme another!
-      </RaisedButton>
+      <CustomFlatButton
+        label="Gimme Another!"
+        onClick={() => this.gimmeNewShop()}
+      />
+
+      <CustomFlatButton
+        label="Where the F#@k is it?"
+      />
+
     </div>
   )
 }

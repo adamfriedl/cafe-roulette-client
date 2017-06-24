@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux';
 import * as actions from '../actions/coffeeShopActions'
 import thumbsUp from '../assets/images/thumbs-up.png'
 import gulp from '../assets/images/gulp.png'
-import CoffeeShopDetails from './CoffeeShopDetails'
+import CoffeeShopDetailsIndex from './CoffeeShopDetailsIndex'
 
 class CoffeeShopsIndex extends Component {
 
@@ -26,17 +26,21 @@ class CoffeeShopsIndex extends Component {
 
     let shops = this.props.shops.map(shop => (
       <div key={shop.id}>
-        <h2><a href='{shop.website}'>{shop.name}</a></h2>
-          <h3>Description</h3>
-          {shop.description}
-          <h3>Website</h3>
-          <a href={shop.website}>{shop.website}</a>
-          <h3>Address</h3>
-          {shop.address}
-          <CoffeeShopDetails
-            shop={shop}
-          />
 
+        <h2><a href='{shop.website}'>{shop.name}</a></h2>
+
+        <h3>Description</h3>
+        <p style={{marginTop: -15}}>{shop.description}</p>
+
+        <h3>Website</h3>
+        <p style={{marginTop: -15}}><a href={shop.website}>{shop.website}</a></p>
+
+        <h3>Address</h3>
+        <p style={{marginTop: -15}}>{shop.address}</p>
+
+        <CoffeeShopDetailsIndex
+          shop={shop}
+        />
 
       </div>
     ))

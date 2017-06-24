@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/coffeeShopActions';
-import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
 import MenuItem from 'material-ui/MenuItem';
 import { ValidatorForm, TextValidator, SelectValidator} from 'react-material-ui-form-validator';
+import PatrickHandSC from '../assets/fonts/Patrick_Hand_SC/PatrickHandSC-Regular.ttf'
 
 
 class CoffeeShopsForm extends Component {
@@ -80,16 +81,28 @@ class CoffeeShopsForm extends Component {
     window.scrollTo(0, 0)
   }
 
+
   render() {
 
-    let flexContainer = {
+    const CustomFlatButton = (props) => (
+      <FlatButton {...props}
+        style={{color: 'white', marginTop: 20, backgroundColor: 'red'}}
+        />
+    )
+
+    const flexContainer = {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center'
     }
 
+    const inputStyle = {
+      fontFamily: 'Patrick Hand SC',
+      fontSize: '1.3em'
+    }
+
     return(
-      <div>
+      <div style={{fontFamily: 'Patrick Hand SC'}}>
 
         <div style={flexContainer}>
           <h1>Add a Coffee Shop. You Can Do It!</h1>
@@ -107,6 +120,7 @@ class CoffeeShopsForm extends Component {
 
             <TextValidator
               hintText="Central Perk"
+              style={inputStyle}
               name="CoffeeShopName"
               value={this.state.name}
               floatingLabelText="Name"
@@ -118,6 +132,7 @@ class CoffeeShopsForm extends Component {
 
             <TextValidator
               hintText="Hipster customer service but delicious cold brew."
+              style={inputStyle}
               name="CoffeeShopDescription"
               value={this.state.description}
               floatingLabelText="Description"
@@ -132,6 +147,7 @@ class CoffeeShopsForm extends Component {
 
             <TextValidator
               hintText="thejollygoat.com"
+              style={inputStyle}
               name="CoffeeShopWebsite"
               value={this.state.website}
               floatingLabelText="Website"
@@ -145,6 +161,7 @@ class CoffeeShopsForm extends Component {
 
             <TextValidator
               hintText="520 West 8th Avenue, New York, NY 10018"
+              style={inputStyle}
               name="CoffeeShopAddress"
               value={this.state.address}
               floatingLabelText="Address"
@@ -159,19 +176,29 @@ class CoffeeShopsForm extends Component {
 
             <SelectValidator
               floatingLabelText="Mad Delish Snacks?"
+              style={inputStyle}
               name="CoffeeShopFood"
               value={this.state.food}
               onChange={(e, index, value) => this.handleFoodChange(e, index, value)}
               validators={['required']}
               errorMessages={['This field is required, dude!']}
             >
-              <MenuItem value={true} primaryText="Yes" />
-              <MenuItem value={false} primaryText="No" />
+              <MenuItem
+                value={true}
+                style={inputStyle}
+                primaryText="Yes"
+              />
+              <MenuItem
+                alue={false}
+                style={inputStyle}
+                primaryText="No"
+              />
             </SelectValidator>
             <br />
 
             <SelectValidator
-              floatingLabelText="Sad Nonprofit Wallet Pain"
+              floatingLabelText="Hit to the Ol' Nonprofit Wallet?"
+              style={inputStyle}
               name="CoffeeShopPriceRange"
               value={this.state.price_range}
               onChange={(e, index, value) => this.handlePriceRangeChange(e, index, value)}
@@ -180,11 +207,13 @@ class CoffeeShopsForm extends Component {
             >
               <MenuItem
                 value={"$"}
+                style={inputStyle}
                 primaryText="$ - Like they're giving it away!"
               />
               <MenuItem
                 value={"$$"}
-                primaryText="$$ - No worries, Julian is buying!"
+                style={inputStyle}
+                primaryText="$$ - Julian is buying!"
               />
 
 
@@ -192,11 +221,11 @@ class CoffeeShopsForm extends Component {
             <br />
             <br />
 
-            <RaisedButton
-              type="submit"            
-            >
-              Submit
-            </RaisedButton>
+            <CustomFlatButton
+              type="submit"
+              label="Submit"
+            />
+
           </ValidatorForm>
         </div>
       </div>
