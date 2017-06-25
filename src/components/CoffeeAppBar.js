@@ -19,9 +19,15 @@ class CoffeeAppBar extends Component {
 
   render() {
 
+    const appBarStyle = {
+      position: 'fixed',
+      marginTop: -10
+    }
+
     return (
       <div>
         <AppBar
+          style={appBarStyle}
           title="Where's for Coffee, 520?"
           iconElementLeft={<IconButton><CoffeeCupIcon /></IconButton>}
           onLeftIconButtonTouchTap={this.toggleDrawer}

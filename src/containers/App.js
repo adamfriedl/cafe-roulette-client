@@ -24,12 +24,12 @@ class App extends Component {
 
     const appStyle = {
       fontFamily: 'Patrick Hand SC',
-      lineHeight: '1.2',
-      // fontSize: '1em'
+      lineHeight: '1.2'
     }
 
     const containerStyle = {
-      margin: 40,
+      marginLeft: 40,
+      paddingTop: 64
     }
 
     return (
