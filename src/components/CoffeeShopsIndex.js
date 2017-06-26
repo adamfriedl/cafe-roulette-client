@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/coffeeShopActions'
-import thumbsUp from '../assets/images/thumbs-up.png'
-import gulp from '../assets/images/gulp.png'
 import CoffeeShopDetailsIndex from './CoffeeShopDetailsIndex'
 
 class CoffeeShopsIndex extends Component {
@@ -16,13 +14,13 @@ class CoffeeShopsIndex extends Component {
   }
 
   render() {
-    let flexContainer = {
-      display: 'flex',
-      justifyContent: 'left',
-      alignItems: 'center',
-      marginRight: 40,
-      flexWrap: 'wrap'
-    }
+    // let flexContainer = {
+    //   display: 'flex',
+    //   justifyContent: 'left',
+    //   alignItems: 'center',
+    //   marginRight: 40,
+    //   flexWrap: 'wrap'
+    // }
 
     let shops = this.props.shops.map(shop => (
       <div key={shop.id}>

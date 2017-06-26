@@ -8,7 +8,6 @@ import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import Recommendation from '../components/Recommendation'
 import CoffeeShopsForm from './CoffeeShopsForm'
 import CoffeeShopsIndex from '../components/CoffeeShopsIndex'
-import PatrickHandSC from '../assets/fonts/Patrick_Hand_SC/PatrickHandSC-Regular.ttf'
 
 class App extends Component {
 

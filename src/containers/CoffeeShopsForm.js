@@ -5,8 +5,6 @@ import * as actions from '../actions/coffeeShopActions';
 import FlatButton from 'material-ui/FlatButton';
 import MenuItem from 'material-ui/MenuItem';
 import { ValidatorForm, TextValidator, SelectValidator} from 'react-material-ui-form-validator';
-import PatrickHandSC from '../assets/fonts/Patrick_Hand_SC/PatrickHandSC-Regular.ttf'
-
 
 class CoffeeShopsForm extends Component {
 

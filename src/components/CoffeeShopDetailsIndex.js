@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import thumbsUp from '../assets/images/thumbs-up.png'
 import thumbsDown from '../assets/images/thumbs-down.png'
 import gulp from '../assets/images/gulp.png'
@@ -11,9 +11,6 @@ const CoffeeShopDetailsIndex = (props) => {
     flexWrap: 'wrap'
   }
 
-  let imgStyle = {
-
-  }
 
   return(
     <div style={flexContainer}>

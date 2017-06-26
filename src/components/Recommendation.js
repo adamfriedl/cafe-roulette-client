@@ -2,8 +2,6 @@ import React from 'react'
 import FlatButton from 'material-ui/FlatButton';
 import CoffeeShopDetails from './CoffeeShopDetails'
 import greetings from '../localData/greetings'
-import {blue600, blue800, lightblue500, redA700} from 'material-ui/styles/colors';
-
 
 const Recommendation = (props) => {
 
@@ -18,7 +16,7 @@ const Recommendation = (props) => {
 
   const CustomFlatButton = (props) => (
     <FlatButton {...props}
-      style={{color: 'white', marginTop: 20, backgroundColor: 'red', marginLeft: 40, marginTop: 30, marginRight: 180}}
+      style={{color: 'white', backgroundColor: 'red', marginLeft: 40, marginTop: 30, marginRight: 180}}
     />
   )
 

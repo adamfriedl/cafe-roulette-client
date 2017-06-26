@@ -5,12 +5,10 @@ import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk'
 import rootReducer from './reducers'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {blue600, blue800, lightblue500, redA700} from 'material-ui/styles/colors';
+import {blue600, blue800} from 'material-ui/styles/colors';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {WrapperApp} from './containers/App';
 import injectTapEventPlugin from 'react-tap-event-plugin'
-import PatrickHandSC from './assets/fonts/Patrick_Hand_SC/PatrickHandSC-Regular.ttf'
-
 
 injectTapEventPlugin()
 
