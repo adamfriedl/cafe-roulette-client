@@ -2,15 +2,10 @@ import React from 'react'
 import FlatButton from 'material-ui/FlatButton';
 import CoffeeShopDetails from './CoffeeShopDetails'
 import greetings from '../localData/greetings'
+import {blue600, blue800, lightblue500, redA700} from 'material-ui/styles/colors';
 
 
 const Recommendation = (props) => {
-
-  // function gimmeNewShop() {
-  //   console.log('Hello there!')
-  //   let shop = Object.assign({}, props.shops[Math.floor(Math.random()*props.shops.length)])
-  //   return shop
-  // }
 
   let greeting = greetings[Math.floor(Math.random()*greetings.length)]
 
@@ -23,7 +18,7 @@ const Recommendation = (props) => {
 
   const CustomFlatButton = (props) => (
     <FlatButton {...props}
-      style={{color: 'white', margin: 20, backgroundColor: 'red'}}
+      style={{color: 'white', marginTop: 20, backgroundColor: 'red', marginLeft: 40, marginTop: 30, marginRight: 180}}
     />
   )
 
@@ -44,7 +39,7 @@ const Recommendation = (props) => {
 
       <CustomFlatButton
         label="Gimme Another!"
-        onClick={() => this.gimmeNewShop()}
+        onClick={() => this.newShop()}
       />
 
       <CustomFlatButton
