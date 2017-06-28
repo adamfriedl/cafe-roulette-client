@@ -23,7 +23,7 @@ class App extends Component {
 
     const appStyle = {
       fontFamily: 'Patrick Hand SC',
-      lineHeight: '1.2'
+      lineHeight: '1.2',
     }
 
     const containerStyle = {
@@ -41,7 +41,7 @@ class App extends Component {
               {this.props.loading
                 ? <h2>Loading...</h2>
                 : <Switch>
-                    <Route exact path='/' render={props => <Recommendation shops={this.props.shops} />} />
+                    <Route exact path='/' component={Recommendation} />
                     <Route path='/coffeeshops/new' component={CoffeeShopsForm} />
                     <Route path='/coffeeshops' render={props => <CoffeeShopsIndex shops={this.props.shops} />} />
                   </Switch>
