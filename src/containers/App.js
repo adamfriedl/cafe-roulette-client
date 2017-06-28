@@ -28,6 +28,7 @@ class App extends Component {
 
     const containerStyle = {
       marginLeft: 40,
+      marginRight: 40,
       paddingTop: 64
     }
 

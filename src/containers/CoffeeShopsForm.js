@@ -187,7 +187,7 @@ class CoffeeShopsForm extends Component {
                 primaryText="Yes"
               />
               <MenuItem
-                alue={false}
+                value={false}
                 style={inputStyle}
                 primaryText="No"
               />

@@ -1,18 +1,14 @@
 import React from 'react'
 import FlatButton from 'material-ui/FlatButton';
+import RecBody from './RecBody'
 import CoffeeShopDetails from './CoffeeShopDetails'
 import greetings from '../localData/greetings'
 
 const Recommendation = (props) => {
-
   let greeting = greetings[Math.floor(Math.random()*greetings.length)]
 
   let shop = Object.assign({}, props.shops[Math.floor(Math.random()*props.shops.length)])
-
-  let greetingStyle = {
-    fontSize: '3em',
-    lineHeight: 1.2
-  }
+  debugger
 
   const CustomFlatButton = (props) => (
     <FlatButton {...props}
@@ -22,18 +18,10 @@ const Recommendation = (props) => {
 
   return (
     <div>
-      <p style={greetingStyle}>
-        {greeting} <a href='{shop.website}'>{shop.name}</a>
-      </p>
-
-      <div>
-        <h1>Description</h1>
-        <p style={{fontSize: '1.3em', marginTop: -20}}>{shop.description}</p>
-
-      <CoffeeShopDetails
-          shop={shop}
-        />
-      </div>
+      <RecBody
+        shop={shop}
+        greeting={greeting}
+      />
 
       <CustomFlatButton
         label="Gimme Another!"
