@@ -12,21 +12,22 @@ class Recommendation extends Component {
     super(props)
 
     this.state = {
-      shop: Object.assign({}, this.props.shops[Math.floor(Math.random()*this.props.shops.length)])
+      shop: Object.assign({}, this.props.shops[Math.floor(Math.random()*this.props.shops.length)]),
+      greeting: greetings[Math.floor(Math.random()*greetings.length)]
     }
   }
 
   newShop() {
     console.log('Hi, Im newShop!')
     this.setState({
-      shop: Object.assign({}, this.props.shops[Math.floor(Math.random()*this.props.shops.length)])
+      shop: Object.assign({}, this.props.shops[Math.floor(Math.random()*this.props.shops.length)]),
+      greeting: greetings[Math.floor(Math.random()*greetings.length)]
     })
     console.log(this.state.shop)
-    return this.state.shop
   }
 
   render() {
-    let greeting = greetings[Math.floor(Math.random()*greetings.length)]
+    // let greeting = greetings[Math.floor(Math.random()*greetings.length)]
 
     // let shop = Object.assign({}, this.props.shops[Math.floor(Math.random()*this.props.shops.length)])
 
@@ -40,7 +41,7 @@ class Recommendation extends Component {
       <div>
         <RecBody
           shop={this.state.shop}
-          greeting={greeting}
+          greeting={this.state.greeting}
         />
 
         <CustomFlatButton

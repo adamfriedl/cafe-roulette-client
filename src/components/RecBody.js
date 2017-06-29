@@ -1,48 +1,30 @@
 import React, {Component} from 'react'
 import CoffeeShopDetails from './CoffeeShopDetails'
 
-class RecBody extends Component {
-  constructor(props) {
-    super(props)
+const RecBody = (props) => {
 
-    this.state = {
-      shop: props.shop
-    }
-  }
-  componentWillReceiveProps(newProps) {
-    console.log("I'm newProps!")
-    if (this.props.shop !== newProps.shop) {
-      this.setState({
-        shop: newProps.shop
-      })
-    }
+let greetingStyle = {
+    fontSize: '3em',
+    lineHeight: 1.2
   }
 
-  render() {
+  return (
+    <div>
+      <p style={greetingStyle}>
+        {props.greeting} <a href='{props.shop.website}'>{props.shop.name}</a>
+      </p>
 
-    let greetingStyle = {
-        fontSize: '3em',
-        lineHeight: 1.2
-      }
-
-    return (
       <div>
-        <p style={greetingStyle}>
-         <a href='{this.state.shop.website}'>{this.state.shop.name}</a>
-        </p>
+        <h1>Description</h1>
+        <p style={{fontSize: '1.3em', marginTop: -20}}>{props.shop.description}</p>
 
-        <div>
-          <h1>Description</h1>
-          <p style={{fontSize: '1.3em', marginTop: -20}}>{this.state.shop.description}</p>
-
-        <CoffeeShopDetails
-            shop={this.state.shop}
-          />
-        </div>
-
+      <CoffeeShopDetails
+          shop={props.shop}
+        />
       </div>
-    )
-  }
+
+    </div>
+  )
 }
 
 export default RecBody
