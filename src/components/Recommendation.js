@@ -8,11 +8,27 @@ import greetings from '../localData/greetings'
 
 class Recommendation extends Component {
 
-  render() {
+  constructor(props) {
+    super(props)
 
+    this.state = {
+      shop: Object.assign({}, this.props.shops[Math.floor(Math.random()*this.props.shops.length)])
+    }
+  }
+
+  newShop() {
+    console.log('Hi, Im newShop!')
+    this.setState({
+      shop: Object.assign({}, this.props.shops[Math.floor(Math.random()*this.props.shops.length)])
+    })
+    console.log(this.state.shop)
+    return this.state.shop
+  }
+
+  render() {
     let greeting = greetings[Math.floor(Math.random()*greetings.length)]
 
-    let shop = Object.assign({}, this.props.shops[Math.floor(Math.random()*this.props.shops.length)])
+    // let shop = Object.assign({}, this.props.shops[Math.floor(Math.random()*this.props.shops.length)])
 
     const CustomFlatButton = (props) => (
       <FlatButton {...props}
@@ -23,7 +39,7 @@ class Recommendation extends Component {
     return (
       <div>
         <RecBody
-          shop={shop}
+          shop={this.state.shop}
           greeting={greeting}
         />
 
