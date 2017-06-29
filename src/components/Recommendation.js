@@ -5,6 +5,8 @@ import * as actions from '../actions/coffeeShopActions';
 import FlatButton from 'material-ui/FlatButton';
 import RecBody from './RecBody'
 import greetings from '../localData/greetings'
+import AsyncCoffeeShopMap from './AsyncCoffeeShopMap'
+import withScriptjs from "react-google-maps/lib/async/withScriptjs"
 
 class Recommendation extends Component {
 
@@ -50,6 +52,7 @@ class Recommendation extends Component {
           backgroundColor="red"
           label="Where the F#@k is it?"
         />
+
 
       </div>
     )
