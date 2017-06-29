@@ -31,12 +31,6 @@ class Recommendation extends Component {
 
     // let shop = Object.assign({}, this.props.shops[Math.floor(Math.random()*this.props.shops.length)])
 
-    const CustomFlatButton = (props) => (
-      <FlatButton {...props}
-        style={{color: 'white', backgroundColor: 'red', marginLeft: 40, marginTop: 30, marginRight: 180}}
-        />
-    )
-
     return (
       <div>
         <RecBody
@@ -44,12 +38,16 @@ class Recommendation extends Component {
           greeting={this.state.greeting}
         />
 
-        <CustomFlatButton
+        <FlatButton
+          style={{color: 'white', marginLeft: 40, marginTop: 30, marginRight: 180}}
+          backgroundColor="red"
           label="Gimme Another!"
           onClick={() => this.newShop()}
         />
 
-        <CustomFlatButton
+        <FlatButton
+          style={{color: 'white', marginLeft: 40, marginTop: 30, marginRight: 180}}
+          backgroundColor="red"
           label="Where the F#@k is it?"
         />
 

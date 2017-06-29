@@ -82,12 +82,6 @@ class CoffeeShopsForm extends Component {
 
   render() {
 
-    const CustomFlatButton = (props) => (
-      <FlatButton {...props}
-        style={{color: 'white', marginTop: 20, backgroundColor: 'red'}}
-        />
-    )
-
     const flexContainer = {
       display: 'flex',
       justifyContent: 'center',
@@ -219,7 +213,9 @@ class CoffeeShopsForm extends Component {
             <br />
             <br />
 
-            <CustomFlatButton
+            <FlatButton
+              style={{color: 'white'}}
+              backgroundColor="red"
               type="submit"
               label="Submit"
             />

@@ -10,6 +10,14 @@ import CoffeeShopsForm from './CoffeeShopsForm'
 import CoffeeShopsIndex from '../components/CoffeeShopsIndex'
 
 class App extends Component {
+  // constructor(props) {
+  //   super(props)
+  //
+  //   this.state = {
+  //     // shops: this.props.shops,
+  //     // loading: this.props.loading
+  //   }
+  // }
 
   static propTypes = {
     loading: PropTypes.bool

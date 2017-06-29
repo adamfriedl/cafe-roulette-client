@@ -4,16 +4,16 @@ import {bindActionCreators} from 'redux';
 import * as actions from '../actions/coffeeShopActions'
 import CoffeeShopDetailsIndex from './CoffeeShopDetailsIndex'
 
-class CoffeeShopsIndex extends Component {
+const CoffeeShopsIndex = props => {
 
-  update(id) {
-    fetch('http://localhost:9000/coffee_shops/' + id)
-      .then(res => res.json())
-      .then(shop => console.log(shop)
-    )
-  }
+  // update(id) {
+  //   fetch('http://localhost:9000/coffee_shops/' + id)
+  //     .then(res => res.json())
+  //     .then(shop => console.log(shop)
+  //   )
+  // }
 
-  render() {
+  // render() {
     // let flexContainer = {
     //   display: 'flex',
     //   justifyContent: 'left',
@@ -21,8 +21,7 @@ class CoffeeShopsIndex extends Component {
     //   marginRight: 40,
     //   flexWrap: 'wrap'
     // }
-
-    let shops = this.props.shops.map(shop => (
+    let shops = props.shops.map(shop => (
       <div key={shop.id}>
 
         <h2><a href='{shop.website}'>{shop.name}</a></h2>
@@ -49,11 +48,12 @@ class CoffeeShopsIndex extends Component {
         {shops}
       </div>
     )
-  }
+  // }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {actions: bindActionCreators(actions, dispatch)}
-}
+// const mapDispatchToProps = dispatch => {
+//   return {actions: bindActionCreators(actions, dispatch)}
+// }
 
-export default CoffeeShopsIndex = connect(null, mapDispatchToProps)(CoffeeShopsIndex)
+// export default CoffeeShopsIndex = connect(null, mapDispatchToProps)(CoffeeShopsIndex)
+export default CoffeeShopsIndex
