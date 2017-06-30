@@ -69,26 +69,13 @@ class CoffeeAppBar extends Component {
           <AsyncCoffeeShopMap
             googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrBZpXEt2eFvE4OOuXT3KqI60s2vRS8YY"
             loadingElement={
-              <div style={{ height: `100%` }}>
-
-              </div>
+              <div style={{ height: '100%', width: '100%' }} />
             }
             containerElement={
-              <div style={{    position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  justifyContent: 'flex-end',
-                  alignItems: 'center',}} />
+              <div style={{ height: '100%', width: '100%' }} />
             }
             mapElement={
-                <div style={{    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                }} />
+              <div style={{ height: '100%', width: '100%' }} />
             }
           />
 
