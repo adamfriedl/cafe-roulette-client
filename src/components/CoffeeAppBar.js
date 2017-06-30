@@ -6,7 +6,6 @@ import MenuItem from 'material-ui/MenuItem'
 import IconButton from 'material-ui/IconButton'
 import CoffeeCupIcon from '../assets/icons/CoffeeCupIcon'
 import AsyncCoffeeShopMap from './AsyncCoffeeShopMap'
-import withScriptjs from "react-google-maps/lib/async/withScriptjs"
 
 class CoffeeAppBar extends Component {
 
@@ -59,27 +58,6 @@ class CoffeeAppBar extends Component {
           />
         </Drawer>
 
-        <Drawer
-          docked={false}
-          width={400}
-          onRequestChange={this.toggleDrawer}
-          open={true}
-          openSecondary={true}
-        >
-          <AsyncCoffeeShopMap
-            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrBZpXEt2eFvE4OOuXT3KqI60s2vRS8YY"
-            loadingElement={
-              <div style={{ height: '100%', width: '100%' }} />
-            }
-            containerElement={
-              <div style={{ height: '100%', width: '100%' }} />
-            }
-            mapElement={
-              <div style={{ height: '100%', width: '100%' }} />
-            }
-          />
-
-        </Drawer>
       </div>
     )
   }
