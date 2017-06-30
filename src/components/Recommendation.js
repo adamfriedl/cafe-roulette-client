@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React, {Component} from 'react'
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -32,10 +33,27 @@ class Recommendation extends Component {
     console.log(this.state.shop)
   }
 
-  render() {
-    // let greeting = greetings[Math.floor(Math.random()*greetings.length)]
+  codeAddress() {
+    let address = this.state.shop.address
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+      }
+      else
+      {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+  }
 
-    // let shop = Object.assign({}, this.props.shops[Math.floor(Math.random()*this.props.shops.length)])
+
+  render() {
+
+    const geocoder = new google.maps.Geocoder()
 
     return (
       <div>
@@ -58,7 +76,6 @@ class Recommendation extends Component {
             mapElement={
               <div style={{ height: '100%', width: '100%' }} />
             }
-            position={{lat: 25.363882, lng: -131.044922}}
           />
 
         </Drawer>

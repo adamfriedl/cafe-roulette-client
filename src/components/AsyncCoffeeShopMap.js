@@ -7,7 +7,7 @@ const AsyncCoffeeShopMap = withScriptjs(withGoogleMap(
     <GoogleMap
       ref={props.onMapLoad}
       defaultZoom={3}
-      defaultCenter={{ lat: -25.363882, lng: 131.044922 }}
+      defaultCenter={{ lat: 50, lng: 120 }}
       onClick={props.onMapClick}
     >
 
