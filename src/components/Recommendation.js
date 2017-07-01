@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+/* global.google */
 import React, {Component} from 'react'
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -33,11 +34,13 @@ class Recommendation extends Component {
     console.log(this.state.shop)
   }
 
-  codeAddress() {
+  initializeGeocoder() {
+    const geocoder = new google.maps.Geocoder()
     let address = this.state.shop.address
     geocoder.geocode( { 'address': address}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
-        map.setCenter(results[0].geometry.location);
+        // map.setCenter(results[0].geometry.location);
+        console.log(results)
         var marker = new google.maps.Marker({
             map: map,
             position: results[0].geometry.location
@@ -50,10 +53,13 @@ class Recommendation extends Component {
     });
   }
 
+  componentDidMount() {
+    this.initializeGeocoder()
+    // this.codeAddress()
+  }
+
 
   render() {
-
-    const geocoder = new google.maps.Geocoder()
 
     return (
       <div>
