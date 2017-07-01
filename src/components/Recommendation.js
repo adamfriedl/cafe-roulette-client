@@ -19,7 +19,8 @@ class Recommendation extends Component {
     this.state = {
       shop: Object.assign({}, this.props.shops[Math.floor(Math.random()*this.props.shops.length)]),
       greeting: greetings[Math.floor(Math.random()*greetings.length)],
-      open: false
+      open: false,
+      center: null
     }
   }
 
@@ -34,23 +35,34 @@ class Recommendation extends Component {
     console.log(this.state.shop)
   }
 
+  // handleMapLoad(map) {
+  //   this.mapComponent = map
+  // }
+
   initializeGeocoder() {
     const geocoder = new google.maps.Geocoder()
-    let address = this.state.shop.address
-    geocoder.geocode( { 'address': address}, function(results, status) {
+    const address = this.state.shop.address
+    geocoder.geocode( {'address': address}, function(results, status => {
       if (status == google.maps.GeocoderStatus.OK) {
         // map.setCenter(results[0].geometry.location);
-        console.log(results)
-        var marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location
-        });
+        this.setState({
+          center: {
+            lat: results[0].geometry.location.lat(),
+            lng: results[0].geometry.location.lng()
+          }
+        })
+        console.log("Results are " + results)
+        return results
+        // var marker = new google.maps.Marker({
+        //     map: map,
+        //     position: results[0].geometry.location
+        // });
       }
       else
       {
-        alert("Geocode was not successful for the following reason: " + status);
+        console.log("Geocode was not successful for the following reason: " + status);
       }
-    });
+    })
   }
 
   componentDidMount() {
@@ -60,30 +72,25 @@ class Recommendation extends Component {
 
 
   render() {
-
     return (
       <div>
 
         <Drawer
-          docked={false}
-          width={400}
-          onRequestChange={this.toggleDrawer}
-          open={this.state.open}
-          openSecondary={true}
+        docked={false}
+        width={400}
+        onRequestChange={this.toggleDrawer}
+        open={this.state.open}
+        openSecondary={true}
         >
           <AsyncCoffeeShopMap
-            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrBZpXEt2eFvE4OOuXT3KqI60s2vRS8YY"
-            loadingElement={
-              <div style={{ height: '100%', width: '100%' }} />
-            }
             containerElement={
-              <div style={{ height: '100%', width: '100%' }} />
+              <div style={{ height: '100%' }} />
             }
             mapElement={
-              <div style={{ height: '100%', width: '100%' }} />
+              <div style={{ height: '100%' }} />
             }
+            center={this.state.center}
           />
-
         </Drawer>
 
         <RecBody
