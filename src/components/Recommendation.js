@@ -10,6 +10,10 @@ import greetings from '../localData/greetings'
 import Drawer from 'material-ui/Drawer'
 import AsyncCoffeeShopMap from './AsyncCoffeeShopMap'
 import withScriptjs from "react-google-maps/lib/async/withScriptjs"
+import SimpleMap from './SimpleMap'
+
+// const geocoder = new google.maps.Geocoder()
+// const address = this.state.shop.address
 
 class Recommendation extends Component {
 
@@ -35,24 +39,22 @@ class Recommendation extends Component {
     console.log(this.state.shop)
   }
 
-  // handleMapLoad(map) {
-  //   this.mapComponent = map
-  // }
-
   initializeGeocoder() {
     const geocoder = new google.maps.Geocoder()
     const address = this.state.shop.address
-    geocoder.geocode( {'address': address}, function(results, status => {
+    geocoder.geocode({'address': address}, (results, status) => {
       if (status == google.maps.GeocoderStatus.OK) {
-        // map.setCenter(results[0].geometry.location);
+        console.log('LatLng is ' + results[0].geometry.location.lat(), results[0].geometry.location.lng())
         this.setState({
           center: {
             lat: results[0].geometry.location.lat(),
             lng: results[0].geometry.location.lng()
-          }
+          },
+          open: true
         })
-        console.log("Results are " + results)
-        return results
+        console.log(this.state.center)
+        console.log("Results are " + results[0].geometry.location.lng())
+        // return results
         // var marker = new google.maps.Marker({
         //     map: map,
         //     position: results[0].geometry.location
@@ -65,9 +67,8 @@ class Recommendation extends Component {
     })
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     this.initializeGeocoder()
-    // this.codeAddress()
   }
 
 
@@ -82,15 +83,11 @@ class Recommendation extends Component {
         open={this.state.open}
         openSecondary={true}
         >
-          <AsyncCoffeeShopMap
-            containerElement={
-              <div style={{ height: '100%' }} />
-            }
-            mapElement={
-              <div style={{ height: '100%' }} />
-            }
+
+          <SimpleMap
             center={this.state.center}
           />
+
         </Drawer>
 
         <RecBody
