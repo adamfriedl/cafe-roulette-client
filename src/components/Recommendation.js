@@ -8,12 +8,7 @@ import FlatButton from 'material-ui/FlatButton';
 import RecBody from './RecBody'
 import greetings from '../localData/greetings'
 import Drawer from 'material-ui/Drawer'
-import AsyncCoffeeShopMap from './AsyncCoffeeShopMap'
-import withScriptjs from "react-google-maps/lib/async/withScriptjs"
 import SimpleMap from './SimpleMap'
-
-// const geocoder = new google.maps.Geocoder()
-// const address = this.state.shop.address
 
 class Recommendation extends Component {
 
@@ -24,7 +19,10 @@ class Recommendation extends Component {
       shop: Object.assign({}, this.props.shops[Math.floor(Math.random()*this.props.shops.length)]),
       greeting: greetings[Math.floor(Math.random()*greetings.length)],
       open: false,
-      center: null
+      center: {
+        lat: null,
+        lng: null
+      }
     }
   }
 
@@ -43,7 +41,7 @@ class Recommendation extends Component {
     const geocoder = new google.maps.Geocoder()
     const address = this.state.shop.address
     geocoder.geocode({'address': address}, (results, status) => {
-      if (status == google.maps.GeocoderStatus.OK) {
+      if (status === google.maps.GeocoderStatus.OK) {
         console.log('LatLng is ' + results[0].geometry.location.lat(), results[0].geometry.location.lng())
         this.setState({
           center: {
@@ -86,6 +84,8 @@ class Recommendation extends Component {
 
           <SimpleMap
             center={this.state.center}
+            lat={this.state.center.lat}
+            lng={this.state.center.lng}
           />
 
         </Drawer>

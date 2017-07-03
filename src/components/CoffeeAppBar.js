@@ -5,7 +5,6 @@ import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
 import IconButton from 'material-ui/IconButton'
 import CoffeeCupIcon from '../assets/icons/CoffeeCupIcon'
-import AsyncCoffeeShopMap from './AsyncCoffeeShopMap'
 
 class CoffeeAppBar extends Component {
 

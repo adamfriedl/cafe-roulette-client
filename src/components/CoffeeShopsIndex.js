@@ -1,7 +1,4 @@
-import React, { Component } from 'react';
-// import {connect} from 'react-redux';
-// import {bindActionCreators} from 'redux';
-// import * as actions from '../actions/coffeeShopActions'
+import React from 'react';
 import CoffeeShopDetailsIndex from './CoffeeShopDetailsIndex'
 
 const CoffeeShopsIndex = props => {
