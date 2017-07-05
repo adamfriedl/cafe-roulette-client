@@ -50,8 +50,7 @@ class Recommendation extends Component {
           center: {
             lat: results[0].geometry.location.lat(),
             lng: results[0].geometry.location.lng()
-          },
-          open: true
+          }
         })
         console.log('initializeGeocoder method NOW says the address is ' + this.state.shop.address)
 

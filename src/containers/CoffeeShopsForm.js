@@ -66,6 +66,9 @@ class CoffeeShopsForm extends Component {
     e.preventDefault()
     console.log(this.state)
     this.props.actions.addCoffeeShop(this.state)
+      .then(
+        res => this.props.actions.backgroundFetchCoffeeShops()
+      )
 
     this.setState({
       name: '',
