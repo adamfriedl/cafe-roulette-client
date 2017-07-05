@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+/* global.google */
 
 import React, {Component} from 'react'
 import {connect} from 'react-redux';
@@ -33,12 +34,13 @@ class Recommendation extends Component {
     this.setState({
       shop: Object.assign({}, this.props.shops[Math.floor(Math.random()*this.props.shops.length)]),
       greeting: greetings[Math.floor(Math.random()*greetings.length)]
-    })
-    console.log(this.state.shop)
+      },
+      () => {this.getAddress()}
+    )
   }
 
   getAddress() {
-    const geocoder = new google.maps.Geocoder
+    const geocoder = new google.maps.Geocoder()
     let address = this.state.shop.address
     console.log('initializeGeocoder method says the address is ' + this.state.shop.address)
     geocoder.geocode({'address': address}, (results, status) => {
@@ -59,6 +61,10 @@ class Recommendation extends Component {
         console.log("Geocode was not successful for the following reason: " + status);
       }
     })
+  }
+
+  componentDidMount() {
+    this.getAddress()
   }
 
   render() {
@@ -97,7 +103,7 @@ class Recommendation extends Component {
           style={{color: 'white', marginLeft: 40, marginTop: 30, marginRight: 180}}
           backgroundColor="red"
           label="Where the F#@k is it?"
-          onClick={() => this.getAddress()}
+          onClick={() => this.toggleDrawer()}
         />
 
 
