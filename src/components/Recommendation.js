@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-/* global.google */
+
 import React, {Component} from 'react'
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -61,11 +61,6 @@ class Recommendation extends Component {
     })
   }
 
-  componentDidMount = () => {
-    this.getAddress()
-  }
-
-
   render() {
     return (
       <div>
@@ -85,10 +80,6 @@ class Recommendation extends Component {
           />
 
         </Drawer>
-
-        <p>Address:<br />
-        {this.state.shop.address}
-      </p>
 
         <RecBody
           shop={this.state.shop}

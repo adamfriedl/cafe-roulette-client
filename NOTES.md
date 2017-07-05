@@ -1,12 +1,12 @@
 # To Do
 
-- Style
+- Style (and fix icon placement)
 
 - Update state after form submission
 
 - Validate url form input
 
-- Refresh map with new shop
+- Shuffle without repeats
 
 - Push to Heroku
 
