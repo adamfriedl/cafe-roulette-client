@@ -8,10 +8,6 @@ export default class SimpleMap extends Component {
     zoom: 17
   };
 
-  // constructor(props) {
-  //   super(props)
-  // }
-
   render() {
     return (
       <GoogleMapReact

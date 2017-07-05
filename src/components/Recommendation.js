@@ -37,12 +37,13 @@ class Recommendation extends Component {
     console.log(this.state.shop)
   }
 
-  initializeGeocoder() {
-    const geocoder = new google.maps.Geocoder()
-    const address = this.state.shop.address
+  getAddress() {
+    const geocoder = new google.maps.Geocoder
+    let address = this.state.shop.address
+    console.log('initializeGeocoder method says the address is ' + this.state.shop.address)
     geocoder.geocode({'address': address}, (results, status) => {
       if (status === google.maps.GeocoderStatus.OK) {
-        console.log('LatLng is ' + results[0].geometry.location.lat(), results[0].geometry.location.lng())
+        console.log('Status is OK!')
         this.setState({
           center: {
             lat: results[0].geometry.location.lat(),
@@ -50,13 +51,8 @@ class Recommendation extends Component {
           },
           open: true
         })
-        console.log(this.state.center)
-        console.log("Results are " + results[0].geometry.location.lng())
-        // return results
-        // var marker = new google.maps.Marker({
-        //     map: map,
-        //     position: results[0].geometry.location
-        // });
+        console.log('initializeGeocoder method NOW says the address is ' + this.state.shop.address)
+
       }
       else
       {
@@ -66,7 +62,7 @@ class Recommendation extends Component {
   }
 
   componentDidMount = () => {
-    this.initializeGeocoder()
+    this.getAddress()
   }
 
 
@@ -90,6 +86,10 @@ class Recommendation extends Component {
 
         </Drawer>
 
+        <p>Address:<br />
+        {this.state.shop.address}
+      </p>
+
         <RecBody
           shop={this.state.shop}
           greeting={this.state.greeting}
@@ -106,7 +106,7 @@ class Recommendation extends Component {
           style={{color: 'white', marginLeft: 40, marginTop: 30, marginRight: 180}}
           backgroundColor="red"
           label="Where the F#@k is it?"
-          onClick={() => this.toggleDrawer()}
+          onClick={() => this.getAddress()}
         />
 
 

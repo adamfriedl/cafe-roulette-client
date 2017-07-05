@@ -1,17 +1,13 @@
 # To Do
+
 - Style
 
-- Refresh index page
-  - Validate url
+- Update state after form submission
 
+- Validate url form input
 
-- Google Maps API
+- Refresh map with new shop
 
+- Push to Heroku
 
-<AsyncCoffeeShopMap
-  containerElement={<div style={{ height: '100%' }} />}
-  mapElement={
-    <div style={{ height: '75%' }} />, this.state.center
-  }
-  mapElementcenter={this.state.center}
-/>
+- Custom domain
