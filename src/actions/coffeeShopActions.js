@@ -6,7 +6,7 @@ export function fetchCoffeeShops() {
     dispatch({type: 'LOADING_COFFEE_SHOPS'})
     return fetch(
       // 'http://localhost:9000/coffee_shops')
-    'https://floating-temple-82552.herokuapp.com/coffee_shops')
+    'https://floating-temple-82552.herokuapp.com')
       .then(res => res.json())
       .then(shops => dispatch({type: 'FETCH_COFFEE_SHOPS', payload: shops}))
   }
@@ -17,7 +17,7 @@ export function backgroundFetchCoffeeShops() {
   return function(dispatch) {
     return fetch(
       // 'http://localhost:9000/coffee_shops')
-    'https:floating-temple-82552.herokuapp.com/coffee_shops')
+    'https://floating-temple-82552.herokuapp.com')
       .then(res => res.json())
       .then(shops => dispatch({type: 'FETCH_COFFEE_SHOPS', payload: shops}))
   }
