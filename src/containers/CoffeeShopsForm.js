@@ -50,7 +50,6 @@ class CoffeeShopsForm extends Component {
   };
 
   handleFoodChange(e, index, value) {
-    console.log('Selected ' + value)
     this.setState({
       food: value
     });
@@ -141,7 +140,7 @@ class CoffeeShopsForm extends Component {
             <br />
 
             <TextValidator
-              hintText="thejollygoat.com"
+              hintText="http://"
               style={inputStyle}
               name="CoffeeShopWebsite"
               value={this.state.website}
