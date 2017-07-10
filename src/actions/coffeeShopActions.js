@@ -4,7 +4,9 @@ export function fetchCoffeeShops() {
 
   return function(dispatch) {
     dispatch({type: 'LOADING_COFFEE_SHOPS'})
-    return fetch('https://morning-badlands-16120.herokuapp.com/coffee_shops')
+    return fetch(
+      // 'http://localhost:9000/coffee_shops')
+    'https://floating-temple-82552.herokuapp.com/coffee_shops')
       .then(res => res.json())
       .then(shops => dispatch({type: 'FETCH_COFFEE_SHOPS', payload: shops}))
   }
@@ -13,7 +15,9 @@ export function fetchCoffeeShops() {
 export function backgroundFetchCoffeeShops() {
 
   return function(dispatch) {
-    return fetch('https://morning-badlands-16120.herokuapp.com/coffee_shops')
+    return fetch(
+      // 'http://localhost:9000/coffee_shops')
+    'https:floating-temple-82552.herokuapp.com/coffee_shops')
       .then(res => res.json())
       .then(shops => dispatch({type: 'FETCH_COFFEE_SHOPS', payload: shops}))
   }
