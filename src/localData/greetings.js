@@ -4,8 +4,7 @@ const greetings = [
   "Some people like Starbucks, but those people are wrong. Defy the corporate overlords at",
   "Why aren't there enough desks in this place? F@%k it, I'm going to",
   "Did Friedl eat all the pastries in the south kitchen again? Alas, let's go to",
-  "Put some coffee in your face at",
-  ""
+  "Put some coffee in your face at"
 
 
 ]
