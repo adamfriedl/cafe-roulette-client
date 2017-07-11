@@ -21,7 +21,8 @@ class CoffeeAppBar extends Component {
 
     const appBarStyle = {
       position: 'fixed',
-      marginTop: -10
+      marginTop: -10,
+      marginLeft: -10
     }
 
     return (
