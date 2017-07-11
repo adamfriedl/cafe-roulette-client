@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import GoogleMapReact from 'google-map-react'
 import MyCoffeeShop from './MyCoffeeShop'
+import StarBorder from 'material-ui-icons/StarBorder'
 
 export default class SimpleMap extends Component {
   static defaultProps = {
@@ -14,10 +15,10 @@ export default class SimpleMap extends Component {
         center={this.props.center}
         zoom={this.props.zoom}
       >
-        <MyCoffeeShop
+        <StarBorder
+          color={'blue'}
           lat={this.props.lat}
           lng={this.props.lng}
-          text={'!'}
         />
 
       </GoogleMapReact>

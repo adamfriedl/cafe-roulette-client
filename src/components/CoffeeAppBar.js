@@ -4,7 +4,7 @@ import AppBar from 'material-ui/AppBar'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
 import IconButton from 'material-ui/IconButton'
-import CoffeeCupIcon from '../assets/icons/CoffeeCupIcon'
+import LocalCafe from 'material-ui-icons/LocalCafe'
 
 class CoffeeAppBar extends Component {
 
@@ -29,7 +29,7 @@ class CoffeeAppBar extends Component {
         <AppBar
           style={appBarStyle}
           title="Where's for Coffee, 520?"
-          iconElementLeft={<IconButton><CoffeeCupIcon /></IconButton>}
+          iconElementLeft={<IconButton><LocalCafe /></IconButton>}
           onLeftIconButtonTouchTap={this.toggleDrawer}
         />
 

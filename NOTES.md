@@ -4,6 +4,4 @@
 
 - Shuffle without repeats
 
-- Push to Heroku
-
 - Custom domain
