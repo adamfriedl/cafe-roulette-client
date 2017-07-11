@@ -11,7 +11,7 @@ let footerStyle = {
   return (
     <div>
       <p style={footerStyle}>
-        Made with <WhatsHot color={'orange'}/> by Adam Friedl
+        Made with <WhatsHot color={'red'}/> by Adam Friedl
       </p>
 
     </div>
