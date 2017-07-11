@@ -5,9 +5,10 @@ import PropTypes from 'prop-types'
 import * as actions from '../actions/coffeeShopActions'
 import CoffeeAppBar from '../components/CoffeeAppBar'
 import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
-import Recommendation from '../components/Recommendation'
+import Recommendation from './Recommendation'
 import CoffeeShopsForm from './CoffeeShopsForm'
 import CoffeeShopsIndex from '../components/CoffeeShopsIndex'
+import Footer from '../components/Footer'
 
 class App extends Component {
   // constructor(props) {
@@ -54,6 +55,7 @@ class App extends Component {
                     <Route path='/coffeeshops' render={props => <CoffeeShopsIndex shops={this.props.shops} />} />
                   </Switch>
               }
+              <Footer />
             </div>
           </div>
         </Router>

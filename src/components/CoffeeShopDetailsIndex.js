@@ -1,7 +1,8 @@
 import React from 'react';
 import thumbsUp from '../assets/images/thumbs-up.png'
 import thumbsDown from '../assets/images/thumbs-down.png'
-import gulp from '../assets/images/gulp.png'
+import noThang from '../assets/images/no-thang.png'
+import makeItRain from '../assets/images/make-it-rain.png'
 
 const CoffeeShopDetailsIndex = (props) => {
 
@@ -10,7 +11,6 @@ const CoffeeShopDetailsIndex = (props) => {
     justifyContent: 'left',
     flexWrap: 'wrap'
   }
-
 
   return(
     <div style={flexContainer}>
@@ -39,13 +39,22 @@ const CoffeeShopDetailsIndex = (props) => {
       <div>
         <h3>Mad Scratch?</h3>
         <div style={{textAlign: 'center'}}>
-          <img
-            src={gulp}
-            alt='No worries, Julian is buying!'
-            height={72}
-            width={72}
-            style={{marginTop: -15}}
-            />
+          {props.shop.price_range === '$'
+            ? <img
+                src={noThang}
+                alt={'Practically free!'}
+                height={72}
+                width={72}
+                style={{marginTop: -15}}
+              />
+            : <img
+                src={makeItRain}
+                alt={'Julian is buying!'}
+                height={72}
+                width={72}
+                style={{marginTop: -15}}
+              />
+          }
         </div>
       </div>
     </div>

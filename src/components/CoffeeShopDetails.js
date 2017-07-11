@@ -1,7 +1,8 @@
 import React from 'react';
 import thumbsUp from '../assets/images/thumbs-up.png'
 import thumbsDown from '../assets/images/thumbs-down.png'
-import gulp from '../assets/images/gulp.png'
+import noThang from '../assets/images/no-thang.png'
+import makeItRain from '../assets/images/make-it-rain.png'
 
 const CoffeeShopDetails = (props) => {
 
@@ -21,15 +22,15 @@ const CoffeeShopDetails = (props) => {
               ? <img
               src={thumbsUp}
               alt={'Thumbs up!'}
-              height={120}
-              width={120}
+              height={130}
+              width={130}
               style={{marginTop: -15}}
               />
               : <img
               src={thumbsDown}
               alt={'Thumbs down!'}
-              height={120}
-              width={120}
+              height={130}
+              width={130}
               style={{marginTop: -15}}
               />
             }
@@ -39,13 +40,22 @@ const CoffeeShopDetails = (props) => {
       <div>
         <h1>Mad Scratch?</h1>
         <div style={{textAlign: 'center'}}>
-          <img
-            src={gulp}
-            alt='No worries, Julian is buying!'
-            height={120}
-            width={120}
+          {props.shop.price_range === '$'
+            ? <img
+            src={noThang}
+            alt={"A'int no thang!"}
+            height={130}
+            width={130}
             style={{marginTop: -15}}
             />
+            : <img
+            src={makeItRain}
+            alt={'Make it rain!'}
+            height={130}
+            width={130}
+            style={{marginTop: -15}}
+            />
+          }
         </div>
       </div>
     </div>

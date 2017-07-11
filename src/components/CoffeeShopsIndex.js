@@ -10,18 +10,10 @@ const CoffeeShopsIndex = props => {
   //   )
   // }
 
-  // render() {
-    // let flexContainer = {
-    //   display: 'flex',
-    //   justifyContent: 'left',
-    //   alignItems: 'center',
-    //   marginRight: 40,
-    //   flexWrap: 'wrap'
-    // }
     let shops = props.shops.map(shop => (
       <div key={shop.id}>
 
-        <h2><a href='{shop.website}'>{shop.name}</a></h2>
+        <h2><a href={shop.website}>{shop.name}</a></h2>
 
         <h3>Description</h3>
         <p style={{marginTop: -15}}>{shop.description}</p>

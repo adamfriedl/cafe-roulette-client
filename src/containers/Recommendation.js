@@ -6,10 +6,10 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/coffeeShopActions';
 import FlatButton from 'material-ui/FlatButton';
-import RecBody from './RecBody'
+import RecBody from '../components/RecBody'
 import greetings from '../localData/greetings'
 import Drawer from 'material-ui/Drawer'
-import SimpleMap from './SimpleMap'
+import SimpleMap from '../components/SimpleMap'
 
 class Recommendation extends Component {
 
