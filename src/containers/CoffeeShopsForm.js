@@ -169,7 +169,7 @@ class CoffeeShopsForm extends Component {
             <br />
 
             <SelectValidator
-              floatingLabelText="Mad Delish Snacks?"
+              floatingLabelText="Delish Snacks?"
               style={inputStyle}
               name="CoffeeShopFood"
               value={this.state.food}
@@ -180,18 +180,18 @@ class CoffeeShopsForm extends Component {
               <MenuItem
                 value={true}
                 style={inputStyle}
-                primaryText="Yes"
+                primaryText="Ouais!"
               />
               <MenuItem
                 value={false}
                 style={inputStyle}
-                primaryText="No"
+                primaryText="Nein!"
               />
             </SelectValidator>
             <br />
 
             <SelectValidator
-              floatingLabelText="Hit to the Ol' Nonprofit Wallet?"
+              floatingLabelText="Gimme that paper?"
               style={inputStyle}
               name="CoffeeShopPriceRange"
               value={this.state.price_range}
@@ -202,12 +202,12 @@ class CoffeeShopsForm extends Component {
               <MenuItem
                 value={"$"}
                 style={inputStyle}
-                primaryText="$ - Like they're giving it away!"
+                primaryText="$-It's practically free"
               />
               <MenuItem
                 value={"$$"}
                 style={inputStyle}
-                primaryText="$$ - Julian is buying!"
+                primaryText="$$-Julian is buying!"
               />
 
 

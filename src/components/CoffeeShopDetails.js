@@ -15,7 +15,7 @@ const CoffeeShopDetails = (props) => {
   return(
     <div style={flexContainer}>
       <div style={{marginRight: 100}}>
-          <h1>Mad Delish Snacks?</h1>
+          <h1>Delish Snacks?</h1>
             <div style={{textAlign: 'center'}}>
             {props.shop.food
               ? <img
@@ -37,7 +37,7 @@ const CoffeeShopDetails = (props) => {
 
       </div>
       <div>
-        <h1>Hurt on the Wallet?</h1>
+        <h1>Mad Scratch?</h1>
         <div style={{textAlign: 'center'}}>
           <img
             src={gulp}

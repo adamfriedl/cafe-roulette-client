@@ -28,7 +28,7 @@ class CoffeeAppBar extends Component {
       <div>
         <AppBar
           style={appBarStyle}
-          title="Where's for Coffee, 520?"
+          title="Where's for Coffee, RPS?"
           iconElementLeft={<IconButton><LocalCafe /></IconButton>}
           onLeftIconButtonTouchTap={this.toggleDrawer}
         />
