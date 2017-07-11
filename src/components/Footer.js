@@ -10,7 +10,7 @@ let footerStyle = {
 
   return (
     <div>
-      <p style={ footerStyle }>
+      <p style={footerStyle}>
         Made with <WhatsHot color={'red'}/> by Adam Friedl
       </p>
 
