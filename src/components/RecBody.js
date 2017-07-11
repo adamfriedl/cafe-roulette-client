@@ -11,7 +11,7 @@ let greetingStyle = {
   return (
     <div>
       <p style={greetingStyle}>
-        {props.greeting} <a href={props.shop.website}>{props.shop.name}</a>
+        {props.greeting} <a href={props.shop.website}>{props.shop.name}</a>.
       </p>
 
       <div>
