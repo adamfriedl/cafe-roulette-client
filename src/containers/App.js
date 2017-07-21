@@ -50,7 +50,7 @@ class App extends Component {
               {this.props.loading
                 ? <h2>Loading...</h2>
                 : <Switch>
-                    <Route exact path='/' component={Recommendation} />
+                    <Route exact path={process.env.PUBLIC_URL + '/'} component={Recommendation} />
                     <Route path='/coffeeshops/new' component={CoffeeShopsForm} />
                     <Route path='/coffeeshops' render={props => <CoffeeShopsIndex shops={this.props.shops} />} />
                   </Switch>
