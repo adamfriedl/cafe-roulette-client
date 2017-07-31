@@ -99,7 +99,7 @@ class Recommendation extends Component {
         />
 
         <FlatButton
-          style={{color: 'white', marginLeft: 30, marginTop: 30}
+          style={{color: 'white', marginLeft: 30, marginTop: 30}}
           backgroundColor="red"
           label="Where the F#@k is it?"
           onClick={() => this.toggleDrawer()}
