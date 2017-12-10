@@ -25,7 +25,14 @@ class App extends Component {
       lineHeight: '1.2'
     };
 
+    const childDivStyle = {
+      height: '100vh',
+      display: 'flex',
+      flexDirection: 'column'
+    };
+
     const containerStyle = {
+      flex: '1 0 auto',
       marginLeft: 40,
       marginRight: 40,
       paddingTop: 64
@@ -34,7 +41,7 @@ class App extends Component {
     return (
       <div className="App" style={appStyle}>
         <Router>
-          <div>
+          <div style={childDivStyle}>
             <CoffeeAppBar />
             <div style={containerStyle}>
               {this.props.loading ? (
@@ -55,8 +62,8 @@ class App extends Component {
                   />
                 </Switch>
               )}
-              <Footer />
             </div>
+            <Footer />
           </div>
         </Router>
       </div>
