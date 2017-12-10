@@ -33,6 +33,7 @@ class App extends Component {
 
     const containerStyle = {
       flex: '1 0 auto',
+      margin: '0 auto',
       marginLeft: 40,
       marginRight: 40,
       paddingTop: 64
