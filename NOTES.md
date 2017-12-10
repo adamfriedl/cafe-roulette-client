@@ -1,7 +1,3 @@
 # To Do
 
-- Style (and fix icon placement)
-
-- Shuffle without repeats
-
-- Custom domain
+[Animated loading text](https://codepen.io/zitrusfrisch/pen/fjbal)
