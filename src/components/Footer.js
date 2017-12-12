@@ -3,6 +3,7 @@ import WhatsHot from 'material-ui-icons/Whatshot';
 
 const Footer = () => {
   let footerStyle = {
+    marginTop: 40,
     marginBottom: 40,
     textAlign: 'center'
   };
