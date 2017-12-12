@@ -3,7 +3,7 @@ import GoogleMapReact from 'google-map-react';
 import StarBorder from 'material-ui-icons/StarBorder';
 
 export default class SimpleMap extends Component {
-  // eslint-disable-line
+  // eslint-disable-next-line
   static defaultProps = {
     center: { lat: 59.95, lng: 30.33 },
     zoom: 17

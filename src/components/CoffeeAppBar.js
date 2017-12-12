@@ -14,7 +14,7 @@ class CoffeeAppBar extends Component {
     };
   }
 
-  // eslint-disable-line
+  // eslint-disable-next-line
   toggleDrawer = () => this.setState({ open: !this.state.open });
 
   render() {
