@@ -42,7 +42,7 @@ class App extends Component {
 
     return (
       <div className="App" style={appStyle}>
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <div style={childDivStyle}>
             <CoffeeAppBar />
             <div style={containerStyle}>
@@ -50,11 +50,7 @@ class App extends Component {
                 <h2>Loading...</h2>
               ) : (
                 <Switch>
-                  <Route
-                    exact
-                    path={process.env.PUBLIC_URL + '/'}
-                    component={Recommendation}
-                  />
+                  <Route exact path="/" component={Recommendation} />
                   <Route path="/coffeeshops/new" component={CoffeeShopsForm} />
                   <Route
                     path="/coffeeshops"
