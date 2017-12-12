@@ -11,6 +11,7 @@ import CoffeeShopsIndex from '../components/CoffeeShopsIndex';
 import Footer from '../components/Footer';
 
 class App extends Component {
+  // eslint-disable-line
   static propTypes = {
     loading: PropTypes.bool
   };
