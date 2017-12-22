@@ -26,8 +26,10 @@ class Recommendation extends Component {
     };
   }
 
+  // Open menu in left drawer when you click menu button
   toggleDrawer = () => this.setState({ open: !this.state.open });
 
+  // Select a new shop and a new greeting, then grab address of the new shop
   newShop() {
     console.log('Hi, Im newShop!');
     this.setState(
@@ -44,6 +46,7 @@ class Recommendation extends Component {
     );
   }
 
+  // Plot location of the current shop on Google Mop in right drawer
   getAddress() {
     const geocoder = new google.maps.Geocoder();
     let address = this.state.shop.address;
@@ -76,6 +79,12 @@ class Recommendation extends Component {
   }
 
   render() {
+    const flatButtonStyle = {
+      color: 'white',
+      marginLeft: 30,
+      marginTop: 30
+    };
+
     return (
       <div>
         <Drawer
@@ -95,19 +104,14 @@ class Recommendation extends Component {
         <RecBody shop={this.state.shop} greeting={this.state.greeting} />
 
         <FlatButton
-          style={{
-            color: 'white',
-            marginLeft: 30,
-            marginTop: 30,
-            marginRight: 100
-          }}
+          style={{ ...flatButtonStyle, marginRight: 100 }}
           backgroundColor="red"
           label="Gimme Another!"
           onClick={() => this.newShop()}
         />
 
         <FlatButton
-          style={{ color: 'white', marginLeft: 30, marginTop: 30 }}
+          style={flatButtonStyle}
           backgroundColor="red"
           label="Where the F#@k is it?"
           onClick={() => this.toggleDrawer()}
