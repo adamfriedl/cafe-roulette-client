@@ -47,7 +47,7 @@ class App extends Component {
             <CoffeeAppBar />
             <div style={containerStyle}>
               {this.props.loading ? (
-                <h2>Loading...</h2>
+                <h2>Loading... (Sleeping dyno is waking... Yawn! Stretch!)</h2>
               ) : (
                 <Switch>
                   <Route
